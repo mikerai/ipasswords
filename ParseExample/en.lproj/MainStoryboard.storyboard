@@ -68,7 +68,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logOut:" destination="2" id="qiw-je-NQT"/>
-                                <segue destination="N1q-kZ-zCr" kind="push" identifier="loginScreen" id="4ta-av-3rq"/>
+                                <segue destination="N1q-kZ-zCr" kind="custom" identifier="" customClass="CustomSegue" id="4ta-av-3rq"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Oqu-GI-60U">
@@ -196,7 +196,7 @@
                                     <!--2014-08-21 17:17:42 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -214,7 +214,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reminder title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jv7-OJ-4ME">
@@ -365,6 +365,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Pe6-it-GBw"/>
                                     <barButtonItem image="calendar.png" id="ooK-in-3KJ">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="HlS-YM-54Y" kind="modal" modalTransitionStyle="coverVertical" id="MoH-DZ-Da7"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bTo-Ho-y2n"/>
                                 </items>
@@ -462,7 +465,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <barButtonItem image="calendar.png" id="76S-WF-8PC">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="HlS-YM-54Y" kind="modal" identifier="setReminder" modalTransitionStyle="coverVertical" id="e3t-yd-Khf"/>
+                                            <segue destination="HlS-YM-54Y" kind="modal" identifier="" modalTransitionStyle="coverVertical" id="e3t-yd-Khf"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JFR-5m-ots"/>
@@ -724,5 +727,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="fWq-uf-Y8I"/>
+        <segue reference="MoH-DZ-Da7"/>
     </inferredMetricsTieBreakers>
 </document>

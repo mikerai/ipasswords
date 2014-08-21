@@ -23,6 +23,7 @@
 
 @implementation ParseExampleViewController
 
+
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -127,7 +128,8 @@
     
     NSLog(@"User logged out");
     
-    [self performSegueWithIdentifier:@"loginScreen" sender:self];
+    //[self performSegueWithIdentifier:@"CustomSegue" sender:self];
+    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 

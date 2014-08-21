@@ -72,6 +72,14 @@
     [cell.textLabel setText:localNotification.alertBody];
     [cell.detailTextLabel setText:[localNotification.fireDate description]];
     
+    cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
+    cell.textLabel.textColor = [UIColor colorWithRed:0.275 green:0.314 blue:0.341 alpha:1]; /*#465057*/
+    
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+    
     return cell;
 }
 
@@ -123,6 +131,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

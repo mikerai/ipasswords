@@ -12,6 +12,7 @@
 //#import "ParseExampleCell.h"
 #import "EditInfoViewController.h"
 #import "DetailViewController.h"
+#import "LoginViewController.h"
 
 @interface ParseExampleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
