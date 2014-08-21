@@ -24,8 +24,9 @@
 //@property (nonatomic) int recordIDToEdit;
 @property (strong) NSManagedObject *card;
 
-
 //- (IBAction)cancel:(id)sender;
 - (IBAction)saveInfo:(id)sender;
+
+- (void)setPlaceholder;
 
 @end

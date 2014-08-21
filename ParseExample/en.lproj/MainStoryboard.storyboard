@@ -488,13 +488,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </items>
                                 <color key="barTintColor" red="0.94901960780000005" green="0.59999999999999998" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Notes &amp; Comments" translatesAutoresizingMaskIntoConstraints="NO" id="Gbt-5T-sDY">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gbt-5T-sDY">
                                 <rect key="frame" x="20" y="320" width="280" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.38823529410000002" green="0.64705882349999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oIQ-l6-GNh" id="Kk3-E3-ali"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>

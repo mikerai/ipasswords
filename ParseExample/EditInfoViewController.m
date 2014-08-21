@@ -9,7 +9,6 @@
 #import "EditInfoViewController.h"
 //#import "DBManager.h"
 
-
 @interface EditInfoViewController ()
 /*
 @property (nonatomic, strong) DBManager *dbManager;
@@ -20,7 +19,11 @@
  
 @end
 
-@implementation EditInfoViewController
+@implementation EditInfoViewController {
+
+@private BOOL showPlaceHolder;
+    
+}
 
 @synthesize card;
 
@@ -53,6 +56,12 @@
     // Do any additional setup after loading the view.
     
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    [self setPlaceholder];
+    
+    /*_txtNotes.delegate = self;
+    _txtNotes.text = @"placeholder text here...";
+    _txtNotes.textColor = [UIColor lightGrayColor]; //optional*/
     
     //[self preferredStatusBarStyle];
     
@@ -108,6 +117,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setPlaceholder
+{
+    _txtNotes.text = NSLocalizedString(@"Notes & comments", @"placeholder");
+    _txtNotes.textColor = [UIColor lightGrayColor];
+    self->showPlaceHolder = YES; //we save the state so it won't disappear in case you want to re-edit it
 }
 
 /*
@@ -250,12 +266,31 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    if (self->showPlaceHolder == YES)
+    {
+        _txtNotes.textColor = [UIColor lightGrayColor];
+        textView.text = @"";
+        self->showPlaceHolder = NO;
+    }    [textView becomeFirstResponder];
+    
     [self animateTextView: textView up: YES];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
+
+    [textView resignFirstResponder];
+    
     [self animateTextView: textView up: NO];
+}
+
+- (void)resignKeyboard
+{
+    [_txtNotes resignFirstResponder];
+    //here if you created a button like I did to resign the keyboard, you should hide it
+    if (_txtNotes.text.length == 0) {
+        [self setPlaceholder];
+    }
 }
 
 - (void) animateTextView: (UITextView*) textView up: (BOOL) up
