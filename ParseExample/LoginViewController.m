@@ -28,20 +28,6 @@
     [self.view endEditing:YES];
 }
 
-/*#define DB_NAME @"password.sql"
- #define DB_FULLPATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:DB_NAME]
- 
- 
- + (void)createDatabase
- {
- NSFileManager *fileManager = [NSFileManager defaultManager];
- if(![fileManager fileExistsAtPath:DB_FULLPATH]) {
- NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:DB_NAME];
- [fileManager copyItemAtPath:bundlePath toPath:DB_FULLPATH error:nil];
- }
- 
- }*/
-
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

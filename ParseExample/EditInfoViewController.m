@@ -81,7 +81,7 @@
         [self.txtCardtype setText:[self.card valueForKey:@"type"]];
         [self.txtCardnumber setText:[self.card valueForKey:@"number"]];
         [self.txtCardpin setText:[self.card valueForKey:@"pin"]];
-        [self.txtCardnotes setText:[self.card valueForKey:@"notes"]];
+        [self.txtNotes setText:[self.card valueForKey:@"notes"]];
         [self.txtAccount setText:[self.card valueForKey:@"account"]];
     }
 }
@@ -99,7 +99,7 @@
         [self.txtCardtype setText:[self.card valueForKey:@"type"]];
         [self.txtCardnumber setText:[self.card valueForKey:@"number"]];
         [self.txtCardpin setText:[self.card valueForKey:@"pin"]];
-        [self.txtCardnotes setText:[self.card valueForKey:@"notes"]];
+        [self.txtNotes setText:[self.card valueForKey:@"notes"]];
         [self.txtAccount setText:[self.card valueForKey:@"account"]];
     }
 }
@@ -153,7 +153,7 @@
         [self.card setValue:self.txtAccount.text forKey:@"account"];
         [self.card setValue:self.txtCardnumber.text forKey:@"number"];
         [self.card setValue:self.txtCardpin.text forKey:@"pin"];
-        [self.card setValue:self.txtCardnotes.text forKey:@"notes"];
+        [self.card setValue:self.txtNotes.text forKey:@"notes"];
         
     } else {
         // Create a new device
@@ -163,7 +163,7 @@
         [newCard setValue:self.txtAccount.text forKey:@"account"];
         [newCard setValue:self.txtCardnumber.text forKey:@"number"];
         [newCard setValue:self.txtCardpin.text forKey:@"pin"];
-        [newCard setValue:self.txtCardnotes.text forKey:@"notes"];
+        [newCard setValue:self.txtNotes.text forKey:@"notes"];
         
         NSLog(@"Values saved!");
     }
@@ -221,7 +221,7 @@
     self.txtCardpin.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"cardpin"]];
     self.txtCardnotes.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"notes"]];
     self.txtAccount.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"account"]];
-} */
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
@@ -237,6 +237,30 @@
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
 {
     const int movementDistance = 18; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}*/
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [self animateTextView: textView up: YES];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [self animateTextView: textView up: NO];
+}
+
+- (void) animateTextView: (UITextView*) textView up: (BOOL) up
+{
+    const int movementDistance = 180; // tweak as needed
     const float movementDuration = 0.3f; // tweak as needed
     
     int movement = (up ? -movementDistance : movementDistance);

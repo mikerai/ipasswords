@@ -42,9 +42,9 @@
      */
     
     CATransition* transition = [CATransition animation];
-    transition.duration = .5;
+    transition.duration = .61;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = @"charminUltra";//kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    transition.type = @"alignedFlip";//kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
     transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
     transition.removedOnCompletion = YES; // force removal of animation when completed.
     

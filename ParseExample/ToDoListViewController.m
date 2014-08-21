@@ -32,6 +32,9 @@
                                              selector:@selector(reloadTable)
                                                  name:@"reloadData"
                                                object:nil];
+    
+    [self reloadTable];
+   // self.editing = YES;     // here: adding it cause crash
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,7 +81,7 @@
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
     
-    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+    //[cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     
     return cell;
 }
@@ -88,28 +91,34 @@
     [self.tableView reloadData];
 }
 
-/*
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 71.0;
+}
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         // Delete the row from the data source
+        
+        NSArray *localNotifications = [[UIApplication sharedApplication]  scheduledLocalNotifications];
+        UILocalNotification *notify = [localNotifications objectAtIndex:indexPath.row];
+        [[UIApplication sharedApplication] cancelLocalNotification:notify];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    
+    [tableView reloadData];
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

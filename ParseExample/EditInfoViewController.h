@@ -15,8 +15,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtCardtype;
 @property (weak, nonatomic) IBOutlet UITextField *txtCardnumber;
 @property (weak, nonatomic) IBOutlet UITextField *txtCardpin;
-@property (weak, nonatomic) IBOutlet UITextField *txtCardnotes;
+//@property (weak, nonatomic) IBOutlet UITextField *txtCardnotes;
 @property (weak, nonatomic) IBOutlet UITextField *txtAccount;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtNotes;
 
 //@property (weak, nonatomic) IBOutlet UITextView *accountText;
 //@property (nonatomic) int recordIDToEdit;
