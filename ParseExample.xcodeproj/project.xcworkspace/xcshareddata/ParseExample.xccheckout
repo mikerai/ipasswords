@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C036A778-0FAB-4A05-9E04-CF6A33C12929</string>
+	<string>1F912925-43F2-4C72-BD67-A6657FF79CE7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ParseExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4B6D6415-C6DD-4444-BE9E-5D3CCE2148C3</key>
-		<string>https://bitbucket.org/mikerai/my-passwords.git</string>
+		<key>0423E53B-2EE3-48AB-91DD-225C0EE50270</key>
+		<string>https://bitbucket.org/mikerai/ipasswords.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ParseExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4B6D6415-C6DD-4444-BE9E-5D3CCE2148C3</key>
+		<key>0423E53B-2EE3-48AB-91DD-225C0EE50270</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/mikerai/my-passwords.git</string>
+	<string>https://bitbucket.org/mikerai/ipasswords.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4B6D6415-C6DD-4444-BE9E-5D3CCE2148C3</string>
+	<string>0423E53B-2EE3-48AB-91DD-225C0EE50270</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4B6D6415-C6DD-4444-BE9E-5D3CCE2148C3</string>
+			<string>0423E53B-2EE3-48AB-91DD-225C0EE50270</string>
 			<key>IDESourceControlWCCName</key>
-			<string>My Passwords</string>
+			<string>iPasswords</string>
 		</dict>
 	</array>
 </dict>
