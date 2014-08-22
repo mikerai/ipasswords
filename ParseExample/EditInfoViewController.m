@@ -268,7 +268,7 @@
 {
     if (self->showPlaceHolder == YES)
     {
-        _txtNotes.textColor = [UIColor lightGrayColor];
+        _txtNotes.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
         textView.text = @"";
         self->showPlaceHolder = NO;
     }    [textView becomeFirstResponder];
