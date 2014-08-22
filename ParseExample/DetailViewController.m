@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "ParseExampleViewController.h"
 #import "EditInfoViewController.h"
+#import "ToDoListViewController.h"
 //#import "DBManager.h"
 
 @interface DetailViewController ()
@@ -170,6 +171,12 @@
     if ([[segue identifier] isEqualToString:@"editDetails"]) {
         NSManagedObject *selectedCard = [self card];
         EditInfoViewController *destViewController = segue.destinationViewController;
+        destViewController.card = selectedCard;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"setReminderFromDetails"]) {
+        NSManagedObject *selectedCard = [self card];
+        ToDoListViewController *destViewController = segue.destinationViewController;
         destViewController.card = selectedCard;
     }
     

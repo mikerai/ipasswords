@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface ToDoListViewController : UITableViewController
+
+@property (strong) NSManagedObject *card;
 
 -(IBAction)dismissButton:(id)sender;
 

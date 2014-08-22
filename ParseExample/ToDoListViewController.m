@@ -7,13 +7,24 @@
 //
 
 #import "ToDoListViewController.h"
+#import "DetailViewController.h"
 
 @interface ToDoListViewController ()
+@property (strong) NSMutableArray *cards;
 - (void)reloadTable;
 
 @end
 
 @implementation ToDoListViewController
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,6 +38,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    NSLog(@"Cards %@", [_card valueForKey:@"name"]);
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadTable)
@@ -46,6 +61,7 @@
 -(IBAction)dismissButton:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 #pragma mark - Table view data source
@@ -71,13 +87,16 @@
     NSArray *localNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     UILocalNotification *localNotification = [localNotifications objectAtIndex:indexPath.row];
     
+    //NSManagedObject *card = [self.cards objectAtIndex:indexPath.row];
+    
     // Display notification info
     [cell.textLabel setText:localNotification.alertBody];
-    [cell.detailTextLabel setText:[localNotification.fireDate description]];
+    //[cell.detailTextLabel setText:[localNotification.fireDate description]];
     
     cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
     cell.textLabel.textColor = [UIColor colorWithRed:0.275 green:0.314 blue:0.341 alpha:1]; /*#465057*/
     
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@ %@", [_card valueForKey:@"name"], [_card valueForKey:@"type"]]];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
     
