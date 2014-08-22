@@ -7,6 +7,7 @@
 //
 
 #import "EditInfoViewController.h"
+#import "ToDoListViewController.h"
 //#import "DBManager.h"
 
 @interface EditInfoViewController ()
@@ -226,6 +227,31 @@
 }
 
 #pragma mark - Private method implementation
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    /*if ([[segue identifier] isEqualToString:@"editInfo"]) {
+     
+     
+     }
+     
+     if ([[segue identifier] isEqualToString:@"viewDetails"]) {
+     DetailViewController *detailViewController = [segue destinationViewController];
+     detailViewController.delegate = self;
+     detailViewController.recordIDToEdit = self.recordIDToEdit;
+     }
+     
+     EditInfoViewController *editInfoViewController = [segue destinationViewController];
+     editInfoViewController.delegate = self;
+     editInfoViewController.recordIDToEdit = self.recordIDToEdit; */
+    
+    if ([[segue identifier] isEqualToString:@"setReminderFromEdit"]) {
+        NSManagedObject *selectedCard = [self card];
+        ToDoListViewController *destViewController = segue.destinationViewController;
+        destViewController.card = selectedCard;
+    }
+    
+}
 
 /*-(void)loadInfoToEdit{
     // Create the query.

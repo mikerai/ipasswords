@@ -9,6 +9,7 @@
 #import "ToDoListViewController.h"
 #import "DetailViewController.h"
 #import "AddToDoViewController.h"
+#import "EditInfoViewController.h"
 
 @interface ToDoListViewController ()
 @property (strong) NSMutableArray *cards;

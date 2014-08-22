@@ -48,10 +48,10 @@
     
      NSLog(@"Cards from Add To %@", [_card valueForKey:@"name"]);
     
-    _datePicker.date =
+    /*_datePicker.date =
     [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 2 ];
     _datePicker.minimumDate =
-    [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];
+    [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];*/
     
     self.saveButton.layer.cornerRadius = 4.0f;
 }
@@ -70,8 +70,8 @@
     
     [self.itemText resignFirstResponder];
     
-    if ( [ _datePicker.date timeIntervalSinceNow ] < 0 )
-        _datePicker.date = [NSDate date];
+    /*if ( [ _datePicker.date timeIntervalSinceNow ] < 0 )
+        _datePicker.date = [NSDate date];*/
     
     // Get the current date
     //NSDate *pickerDate = [self.datePicker date];
@@ -138,21 +138,32 @@
     //[self dismissViewControllerAnimated:YES completion:nil];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *todaysDate;
-    todaysDate = [NSDate date];
-    NSLog(@"Todays date is %@",formatter);
+    [formatter setDateFormat:@"Mmmm-dd-YYYY 'at' HH:mm"];
+    [formatter setDateStyle:NSDateFormatterFullStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    //NSDate *todaysDate;
+    //todaysDate = [NSDate date];
+    //NSLog(@"Todays date is %@",formatter);
     
     if (myInt!=0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:[NSString stringWithFormat:@"Your reminder has been set to be triggered on %@", [formatter stringFromDate:testDate]] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ %@ Card", [_card valueForKey:@"name"], [_card valueForKey:@"type"]] message:[NSString stringWithFormat:@"Your reminder will be displayed on %@", [formatter stringFromDate:testDate]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
+        
     }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.itemText resignFirstResponder];
-    return NO;
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [[self view] endEditing:TRUE];
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification

@@ -12,7 +12,6 @@
 		345DF00A19A43D3600D3511A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345DF00919A43D3600D3511A /* CoreData.framework */; };
 		8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EC3D419A672A900C50213 /* CustomSegue.m */; };
 		8B21C02B19A65A1B00424BD6 /* Alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */; };
-		8B21C02E19A65F1300424BD6 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21C02C19A65F1300424BD6 /* calendar@2x.png */; };
 		8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */; };
 		8B21C03519A65FFF00424BD6 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C03319A65FFF00424BD6 /* ToDoListViewController.m */; };
 		8B21C03719A6629200424BD6 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21C03619A6629200424BD6 /* cross@2x.png */; };
@@ -22,6 +21,7 @@
 		8B40A22819A29EDF00545A8A /* hair@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B40A22719A29EDF00545A8A /* hair@2x.jpg */; };
 		8B40A22A19A2A3B500545A8A /* supernicebg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B40A22919A2A3B500545A8A /* supernicebg@2x.jpg */; };
 		8B40A23319A2AC4800545A8A /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B40A23219A2AC4800545A8A /* EditInfoViewController.m */; };
+		8B52588019A7F27B007EADF8 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B52587F19A7F27B007EADF8 /* calendar@2x.png */; };
 		8B785EDE19A690D100DE57A1 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B785ECE19A690D100DE57A1 /* Icon-40.png */; };
 		8B785EDF19A690D100DE57A1 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B785ECF19A690D100DE57A1 /* Icon-40@2x.png */; };
 		8B785EE019A690D100DE57A1 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B785ED019A690D100DE57A1 /* Icon-60.png */; };
@@ -78,7 +78,6 @@
 		8B1EC3D319A672A900C50213 /* CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegue.h; sourceTree = "<group>"; };
 		8B1EC3D419A672A900C50213 /* CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegue.m; sourceTree = "<group>"; };
 		8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alarm@2x.png"; sourceTree = "<group>"; };
-		8B21C02C19A65F1300424BD6 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		8B21C03019A65FFF00424BD6 /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
 		8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
 		8B21C03219A65FFF00424BD6 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		8B40A22919A2A3B500545A8A /* supernicebg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "supernicebg@2x.jpg"; sourceTree = "<group>"; };
 		8B40A23119A2AC4800545A8A /* EditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
 		8B40A23219A2AC4800545A8A /* EditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
+		8B52587F19A7F27B007EADF8 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		8B785ECE19A690D100DE57A1 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		8B785ECF19A690D100DE57A1 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
 		8B785ED019A690D100DE57A1 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			children = (
 				8B785ECD19A690C100DE57A1 /* icons */,
 				8B21C03619A6629200424BD6 /* cross@2x.png */,
-				8B21C02C19A65F1300424BD6 /* calendar@2x.png */,
+				8B52587F19A7F27B007EADF8 /* calendar@2x.png */,
 				8B785EF119A697D700DE57A1 /* pinkbg@2x.jpg */,
 				8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */,
 				8B40A22919A2A3B500545A8A /* supernicebg@2x.jpg */,
@@ -418,8 +418,8 @@
 				8B785EEA19A690D100DE57A1 /* Icon.png in Resources */,
 				8B785EED19A690D100DE57A1 /* iTunesArtwork@2x.png in Resources */,
 				CEC5DD8A16E8CC6400F6F75F /* InfoPlist.strings in Resources */,
-				8B21C02E19A65F1300424BD6 /* calendar@2x.png in Resources */,
 				8B785EE619A690D100DE57A1 /* Icon-Small-50.png in Resources */,
+				8B52588019A7F27B007EADF8 /* calendar@2x.png in Resources */,
 				8B785EE819A690D100DE57A1 /* Icon-Small.png in Resources */,
 				8B785EE319A690D100DE57A1 /* Icon-72@2x.png in Resources */,
 				8B785EE919A690D100DE57A1 /* Icon-Small@2x.png in Resources */,
