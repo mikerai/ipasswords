@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *txtCardpin;
 @property (weak, nonatomic) IBOutlet UILabel *txtCardnotes;
 @property (weak, nonatomic) IBOutlet UILabel *txtCardAccount;
+@property (weak, nonatomic) IBOutlet UILabel *dueDay;
 
 @property (strong) NSManagedObject *card;
 

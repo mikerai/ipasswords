@@ -91,6 +91,7 @@
         [self.txtCardnumber setText:[self.card valueForKey:@"number"]];
         [self.txtCardpin setText:[self.card valueForKey:@"pin"]];
         [self.txtNotes setText:[self.card valueForKey:@"notes"]];
+        [self.dueDay setText:[self.card valueForKey:@"dueday"]];
         [self.txtAccount setText:[self.card valueForKey:@"account"]];
     }
 }
@@ -109,6 +110,7 @@
         [self.txtCardnumber setText:[self.card valueForKey:@"number"]];
         [self.txtCardpin setText:[self.card valueForKey:@"pin"]];
         [self.txtNotes setText:[self.card valueForKey:@"notes"]];
+        [self.dueDay setText:[self.card valueForKey:@"dueday"]];
         [self.txtAccount setText:[self.card valueForKey:@"account"]];
     }
 }
@@ -169,6 +171,7 @@
         [self.card setValue:self.txtAccount.text forKey:@"account"];
         [self.card setValue:self.txtCardnumber.text forKey:@"number"];
         [self.card setValue:self.txtCardpin.text forKey:@"pin"];
+        [self.card setValue:self.dueDay.text forKey:@"dueday"];
         [self.card setValue:self.txtNotes.text forKey:@"notes"];
         
     } else {
@@ -179,6 +182,7 @@
         [newCard setValue:self.txtAccount.text forKey:@"account"];
         [newCard setValue:self.txtCardnumber.text forKey:@"number"];
         [newCard setValue:self.txtCardpin.text forKey:@"pin"];
+        [newCard setValue:self.dueDay.text forKey:@"dueday"];
         [newCard setValue:self.txtNotes.text forKey:@"notes"];
         
         NSLog(@"Values saved!");

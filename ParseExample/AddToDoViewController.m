@@ -7,12 +7,24 @@
 //
 
 #import "AddToDoViewController.h"
+#import "DetailViewController.h"
 
 @interface AddToDoViewController ()
+
+@property (strong) NSMutableArray *cards;
 
 @end
 
 @implementation AddToDoViewController
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,10 +42,18 @@
     
     self.itemText.delegate = self;
     
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Card"];
+    self.cards = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+     NSLog(@"Cards from Add To %@", [_card valueForKey:@"name"]);
+    
     _datePicker.date =
     [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 2 ];
     _datePicker.minimumDate =
     [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];
+    
+    self.saveButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,43 +74,79 @@
         _datePicker.date = [NSDate date];
     
     // Get the current date
-    NSDate *pickerDate = [self.datePicker date];
+    //NSDate *pickerDate = [self.datePicker date];
+    
+    NSCalendar *calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDate *date = [self.datePicker date];
+    NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:date];
+    
+    NSInteger year = [dateComponents year];
+    NSInteger month = [dateComponents month];
+    //NSInteger day = [dateComponents day];
+    NSInteger hour = [dateComponents hour];
+    NSInteger minute = [dateComponents minute];
+    //NSInteger second = [dateComponents second];
+    
+    [_datePicker setCalendar:[NSCalendar currentCalendar]];
+    [_datePicker setTimeZone:[calendar timeZone]];
+    
+    //NSDate *now = [NSDate date];
+    
+    NSInteger myInt = [[_card valueForKey:@"dueday"] integerValue];
+    
+    NSLog(@"The day the Card should be paid is %@", [_card valueForKey:@"dueday"]);
     
     NSCalendar *calender = [NSCalendar currentCalendar];
-    calender.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay: myInt];
+    [components setMonth: month + 1];
+    [components setYear: year];
+    [components setHour: hour];
+    [components setMinute: minute];
+    //[components setSecond: 45];
+    [calendar setTimeZone: [NSTimeZone localTimeZone]];
     
-    /*NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    [dateComponents setMonth:1];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDate *newDate = [calendar dateByAddingComponents:dateComponents toDate:pickerDate options:0];*/
+    //NSDate *dateToFire = [calender dateByAddingComponents:components toDate:date options:0];
+    NSDate *testDate = [calender dateFromComponents:components];
     
     // Schedule the notification
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = pickerDate;
+    
+    localNotification.fireDate = testDate;
+    //localNotification.fireDate = newDate;
     localNotification.alertBody = self.itemText.text;
     localNotification.alertAction = @"Show me the details";
     localNotification.soundName = @"apple_alarm.mp3";
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     
+    NSLog(@"Fire Date would be %@", localNotification.fireDate);
+    
     localNotification.repeatInterval = NSMonthCalendarUnit;
+    
+    //[localNotification setTimeZone: [NSTimeZone defaultTimeZone]];
+    [localNotification setRepeatInterval: NSMonthCalendarUnit];
+    NSLog(@"Repeat would be %lu", localNotification.repeatInterval);
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
     // Request to reload table view data
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
     
-    /*
-    
-    NSDateComponents *components = pickerDate;
-    //components.day    = pickerDate;
-    components.hour   = 12;
-    components.minute = 30;
-    
-    NSDate *fireDate = [calender dateFromComponents:components];*/
-    
     // Dismiss the view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    NSDate *todaysDate;
+    todaysDate = [NSDate date];
+    NSLog(@"Todays date is %@",formatter);
+    
+    if (myInt!=0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:[NSString stringWithFormat:@"Your reminder has been set to be triggered on %@", [formatter stringFromDate:testDate]] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

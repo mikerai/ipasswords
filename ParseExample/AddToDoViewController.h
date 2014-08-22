@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface AddToDoViewController : UIViewController <UITextFieldDelegate>
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextField *itemText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
+@property (strong) NSManagedObject *card;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end

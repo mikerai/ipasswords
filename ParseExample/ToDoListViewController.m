@@ -8,6 +8,7 @@
 
 #import "ToDoListViewController.h"
 #import "DetailViewController.h"
+#import "AddToDoViewController.h"
 
 @interface ToDoListViewController ()
 @property (strong) NSMutableArray *cards;
@@ -48,8 +49,16 @@
                                                  name:@"reloadData"
                                                object:nil];
     
-    [self reloadTable];
+    //[self reloadTable];
    // self.editing = YES;     // here: adding it cause crash
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    //NSLog(@"View Did Appear");
+    
+    //[self reloadTable];
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,7 +123,7 @@
     return 71.0;
 }
 
-
+/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -137,7 +146,7 @@
     
     [tableView reloadData];
 }
-
+*/
 
 /*
 // Override to support rearranging the table view.
@@ -168,6 +177,50 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    /*if ([[segue identifier] isEqualToString:@"editInfo"]) {
+     
+     
+     }
+     
+     if ([[segue identifier] isEqualToString:@"viewDetails"]) {
+     DetailViewController *detailViewController = [segue destinationViewController];
+     detailViewController.delegate = self;
+     detailViewController.recordIDToEdit = self.recordIDToEdit;
+     }
+     
+     EditInfoViewController *editInfoViewController = [segue destinationViewController];
+     editInfoViewController.delegate = self;
+     editInfoViewController.recordIDToEdit = self.recordIDToEdit; */
+    
+    if ([[segue identifier] isEqualToString:@"addToDoSegue"]) {
+        NSManagedObject *selectedCard = [self card];
+        AddToDoViewController *destViewController = segue.destinationViewController;
+        destViewController.card = selectedCard;
+    }
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reminder"
+                                                        message:notification.alertBody
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self reloadTable];
+    }
+    
+    // Request to reload table view data
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+    
+    // Set icon badge number to zero
+    application.applicationIconBadgeNumber = 0;
 }
 
 @end

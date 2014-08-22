@@ -81,6 +81,7 @@
         self.txtCardAccount.text = [card valueForKey:@"account"];
         self.txtCardnotes.text = [card valueForKey:@"notes"];
         self.txtCardpin.text = [card valueForKey:@"pin"];
+        self.dueDay.text = [card valueForKey:@"dueday"];
     }
 }
 
@@ -97,6 +98,7 @@
         self.txtCardAccount.text = [card valueForKey:@"account"];
         self.txtCardnotes.text = [card valueForKey:@"notes"];
         self.txtCardpin.text = [card valueForKey:@"pin"];
+        self.dueDay.text = [card valueForKey:@"dueday"];
     }
     
     // Make self the delegate of the textfields.

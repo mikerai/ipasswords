@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtCardpin;
 //@property (weak, nonatomic) IBOutlet UITextField *txtCardnotes;
 @property (weak, nonatomic) IBOutlet UITextField *txtAccount;
+@property (weak, nonatomic) IBOutlet UITextField *dueDay;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtNotes;
 
