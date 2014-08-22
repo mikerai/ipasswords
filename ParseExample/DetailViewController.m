@@ -174,6 +174,7 @@
         NSManagedObject *selectedCard = [self card];
         EditInfoViewController *destViewController = segue.destinationViewController;
         destViewController.card = selectedCard;
+        destViewController.navigationItem.title = @"Edit";
     }
     
     if ([[segue identifier] isEqualToString:@"setReminderFromDetails"]) {
