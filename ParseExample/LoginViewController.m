@@ -76,13 +76,13 @@
     _cancelRegister.backgroundColor = [UIColor colorWithRed:0.635 green:0.18 blue:0.31 alpha:1]; /*#a22e4f*/
     //self.cancelRegister.layer.cornerRadius = 4.0f;
     
-    _forgotButton.backgroundColor = [UIColor colorWithRed:0.498 green:0.392 blue:0.71 alpha:1]; /*#7f64b5*/
+    _forgotButton.backgroundColor = [UIColor colorWithRed:0.953 green:0.714 blue:0.298 alpha:1]; /*#f3b64c mustard*/
     //self.forgotButton.layer.cornerRadius = 4.0f;
     
     self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
     self.profilePic.clipsToBounds = YES;
     
-    self.profilePic.layer.borderWidth = 3.0f;
+    self.profilePic.layer.borderWidth = 4.0f;
     self.profilePic.layer.borderColor = [UIColor whiteColor].CGColor;
     
     _usernameField.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:18.0f];

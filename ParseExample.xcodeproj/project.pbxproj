@@ -58,9 +58,10 @@
 		8B785EED19A690D100DE57A1 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B785EDD19A690D100DE57A1 /* iTunesArtwork@2x.png */; };
 		8B785EF019A695C500DE57A1 /* apple_alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B785EEF19A695C500DE57A1 /* apple_alarm.mp3 */; };
 		8B785EF219A697D700DE57A1 /* pinkbg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B785EF119A697D700DE57A1 /* pinkbg@2x.jpg */; };
+		8B8DAC6B19ABE09B007B6824 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8DAC6A19ABE09B007B6824 /* Default-568h@2x.png */; };
+		8B8DAC6D19ABE4EB007B6824 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8DAC6C19ABE4EB007B6824 /* logo@2x.png */; };
 		8BD148D219A4F1E300466E6F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD148D119A4F1E300466E6F /* Parse.framework */; };
 		8BD148D419A5052500466E6F /* pink@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BD148D319A5052500466E6F /* pink@2x.jpg */; };
-		8BD148D619A507CA00466E6F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD148D519A507CA00466E6F /* Default-568h@2x.png */; };
 		CE1D8D0017A15B220010FB2A /* ImageExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1D8CFF17A15B220010FB2A /* ImageExampleCell.m */; };
 		CE45BAD517B4935A0017FFEB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE45BAD417B4935A0017FFEB /* LoginViewController.m */; };
 		CEC5DD8016E8CC6400F6F75F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC5DD7F16E8CC6400F6F75F /* UIKit.framework */; };
@@ -154,9 +155,10 @@
 		8B785EDD19A690D100DE57A1 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		8B785EEF19A695C500DE57A1 /* apple_alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple_alarm.mp3; sourceTree = "<group>"; };
 		8B785EF119A697D700DE57A1 /* pinkbg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pinkbg@2x.jpg"; sourceTree = "<group>"; };
+		8B8DAC6A19ABE09B007B6824 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8B8DAC6C19ABE4EB007B6824 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		8BD148D119A4F1E300466E6F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8BD148D319A5052500466E6F /* pink@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pink@2x.jpg"; sourceTree = "<group>"; };
-		8BD148D519A507CA00466E6F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE1D8CFE17A15B220010FB2A /* ImageExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageExampleCell.h; sourceTree = "<group>"; };
 		CE1D8CFF17A15B220010FB2A /* ImageExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageExampleCell.m; sourceTree = "<group>"; };
 		CE45BAD317B4935A0017FFEB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				8B40A22119A28D3000545A8A /* gray_bg.jpg */,
 				8B40A21F19A2838500545A8A /* profile-bg.png */,
 				34A47E7C19AA50D90030720C /* lightsbg@2x.png */,
+				8B8DAC6C19ABE4EB007B6824 /* logo@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -445,7 +448,7 @@
 		CEC5DD8616E8CC6400F6F75F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8BD148D519A507CA00466E6F /* Default-568h@2x.png */,
+				8B8DAC6A19ABE09B007B6824 /* Default-568h@2x.png */,
 				CEC5DD8716E8CC6400F6F75F /* ParseExample-Info.plist */,
 				CEC5DD8816E8CC6400F6F75F /* InfoPlist.strings */,
 				CEC5DD8B16E8CC6400F6F75F /* main.m */,
@@ -542,8 +545,9 @@
 				8B40A22419A28E2200545A8A /* smooth_purple_bg.jpg in Resources */,
 				34A47E9419AABD2C0030720C /* Dollar@2x.png in Resources */,
 				8B40A22A19A2A3B500545A8A /* supernicebg@2x.jpg in Resources */,
-				8BD148D619A507CA00466E6F /* Default-568h@2x.png in Resources */,
 				8B40A22019A2838500545A8A /* profile-bg.png in Resources */,
+				8B8DAC6D19ABE4EB007B6824 /* logo@2x.png in Resources */,
+				8B8DAC6B19ABE09B007B6824 /* Default-568h@2x.png in Resources */,
 				8B785EE219A690D100DE57A1 /* Icon-72.png in Resources */,
 				CEC5DD9916E8CC6400F6F75F /* MainStoryboard.storyboard in Resources */,
 				8B40A22219A28D3000545A8A /* gray_bg.jpg in Resources */,
