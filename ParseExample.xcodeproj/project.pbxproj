@@ -18,6 +18,11 @@
 		34A47E9B19AACEA60030720C /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A47E9A19AACEA60030720C /* DeviceViewController.m */; };
 		34A47E9E19AACEBC0030720C /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A47E9D19AACEBC0030720C /* DeviceDetailViewController.m */; };
 		34A47EA119AAD2140030720C /* EditDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A47EA019AAD2140030720C /* EditDeviceViewController.m */; };
+		8B0514C219ABD24A008B9519 /* touch-id-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0514C119ABD24A008B9519 /* touch-id-icon@2x.png */; };
+		8B0514C419ABD3CE008B9519 /* morebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0514C319ABD3CE008B9519 /* morebg@2x.png */; };
+		8B0514C719ABD6C7008B9519 /* WandEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0514C619ABD6C7008B9519 /* WandEViewController.m */; };
+		8B0514CA19ABD6DE008B9519 /* WandEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0514C919ABD6DE008B9519 /* WandEDetailViewController.m */; };
+		8B0514CD19ABD6F0008B9519 /* EditWandEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0514CC19ABD6F0008B9519 /* EditWandEViewController.m */; };
 		8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EC3D419A672A900C50213 /* CustomSegue.m */; };
 		8B21C02B19A65A1B00424BD6 /* Alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */; };
 		8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */; };
@@ -99,6 +104,14 @@
 		34A47E9D19AACEBC0030720C /* DeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailViewController.m; sourceTree = "<group>"; };
 		34A47E9F19AAD2140030720C /* EditDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDeviceViewController.h; sourceTree = "<group>"; };
 		34A47EA019AAD2140030720C /* EditDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDeviceViewController.m; sourceTree = "<group>"; };
+		8B0514C119ABD24A008B9519 /* touch-id-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touch-id-icon@2x.png"; sourceTree = "<group>"; };
+		8B0514C319ABD3CE008B9519 /* morebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morebg@2x.png"; sourceTree = "<group>"; };
+		8B0514C519ABD6C7008B9519 /* WandEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WandEViewController.h; sourceTree = "<group>"; };
+		8B0514C619ABD6C7008B9519 /* WandEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WandEViewController.m; sourceTree = "<group>"; };
+		8B0514C819ABD6DE008B9519 /* WandEDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WandEDetailViewController.h; sourceTree = "<group>"; };
+		8B0514C919ABD6DE008B9519 /* WandEDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WandEDetailViewController.m; sourceTree = "<group>"; };
+		8B0514CB19ABD6F0008B9519 /* EditWandEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWandEViewController.h; sourceTree = "<group>"; };
+		8B0514CC19ABD6F0008B9519 /* EditWandEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWandEViewController.m; sourceTree = "<group>"; };
 		8B1EC3D319A672A900C50213 /* CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegue.h; sourceTree = "<group>"; };
 		8B1EC3D419A672A900C50213 /* CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegue.m; sourceTree = "<group>"; };
 		8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alarm@2x.png"; sourceTree = "<group>"; };
@@ -282,6 +295,12 @@
 		34A47E9819AACE3E0030720C /* W & e */ = {
 			isa = PBXGroup;
 			children = (
+				8B0514C519ABD6C7008B9519 /* WandEViewController.h */,
+				8B0514C619ABD6C7008B9519 /* WandEViewController.m */,
+				8B0514C819ABD6DE008B9519 /* WandEDetailViewController.h */,
+				8B0514C919ABD6DE008B9519 /* WandEDetailViewController.m */,
+				8B0514CB19ABD6F0008B9519 /* EditWandEViewController.h */,
+				8B0514CC19ABD6F0008B9519 /* EditWandEViewController.m */,
 			);
 			name = "W & e";
 			sourceTree = "<group>";
@@ -300,8 +319,10 @@
 			children = (
 				8B785ECD19A690C100DE57A1 /* icons */,
 				8B21C03619A6629200424BD6 /* cross@2x.png */,
+				8B0514C119ABD24A008B9519 /* touch-id-icon@2x.png */,
 				8B4518EB19ABBE5A007EF4BB /* ios8-hero@2x.png */,
 				8B4518E919ABBDCD007EF4BB /* ios8bg@2x.png */,
+				8B0514C319ABD3CE008B9519 /* morebg@2x.png */,
 				34A47E8E19AABD2C0030720C /* Smartphone_Outgoing@2x.png */,
 				34A47E8F19AABD2C0030720C /* Mobile_Signal@2x.png */,
 				34A47E9019AABD2C0030720C /* Dollar@2x.png */,
@@ -530,9 +551,11 @@
 				34A47E9519AABD2C0030720C /* Interface_Three_Panel@2x.png in Resources */,
 				8B785EE719A690D100DE57A1 /* Icon-Small-50@2x.png in Resources */,
 				34A47E9319AABD2C0030720C /* Mobile_Signal@2x.png in Resources */,
+				8B0514C419ABD3CE008B9519 /* morebg@2x.png in Resources */,
 				8B21C02B19A65A1B00424BD6 /* Alarm@2x.png in Resources */,
 				8B785EE419A690D100DE57A1 /* Icon-76.png in Resources */,
 				34A47E7D19AA50D90030720C /* lightsbg@2x.png in Resources */,
+				8B0514C219ABD24A008B9519 /* touch-id-icon@2x.png in Resources */,
 				8BD148D419A5052500466E6F /* pink@2x.jpg in Resources */,
 				8B785EDE19A690D100DE57A1 /* Icon-40.png in Resources */,
 				8B785EE019A690D100DE57A1 /* Icon-60.png in Resources */,
@@ -546,16 +569,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0514CD19ABD6F0008B9519 /* EditWandEViewController.m in Sources */,
 				8B40A23319A2AC4800545A8A /* EditInfoViewController.m in Sources */,
 				CEC5DD8C16E8CC6400F6F75F /* main.m in Sources */,
 				345DF00819A43B8500D3511A /* CoreData.xcdatamodeld in Sources */,
 				3436718119A2D83F0092F85A /* DetailViewController.m in Sources */,
+				8B0514C719ABD6C7008B9519 /* WandEViewController.m in Sources */,
 				8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */,
 				8B4518E819ABAE74007EF4BB /* EditAPViewController.m in Sources */,
 				34A47E9B19AACEA60030720C /* DeviceViewController.m in Sources */,
 				CEC5DD9016E8CC6400F6F75F /* AppDelegate.m in Sources */,
 				34A47E9E19AACEBC0030720C /* DeviceDetailViewController.m in Sources */,
 				8B21C03519A65FFF00424BD6 /* ToDoListViewController.m in Sources */,
+				8B0514CA19ABD6DE008B9519 /* WandEDetailViewController.m in Sources */,
 				CEC5DD9C16E8CC6400F6F75F /* CardsViewController.m in Sources */,
 				8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */,
 				8B4518E519ABAE61007EF4BB /* APDetailViewController.m in Sources */,

@@ -1,20 +1,20 @@
 //
-//  APViewController.m
+//  WandEViewController.m
 //  ParseExample
 //
 //  Created by Miguel Ángel Rodríguez Álvarez Icaza on 8/25/14.
 //  Copyright (c) 2014 Phiveleven. All rights reserved.
 //
 
-#import "APViewController.h"
+#import "WandEViewController.h"
 
-@interface APViewController ()
+@interface WandEViewController ()
 
-@property (strong) NSMutableArray *accessPoints;
+@property (strong) NSMutableArray *WandE;
 
 @end
 
-@implementation APViewController
+@implementation WandEViewController
 
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
@@ -41,17 +41,17 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.tblAccessPoints.delegate = self;
-    self.tblAccessPoints.dataSource = self;
+    self.tblWandE.delegate = self;
+    self.tblWandE.dataSource = self;
     
     // Initialize the dbManager property.
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"AccessPoint"];
-    self.accessPoints = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"WebAndEmail"];
+    self.WandE = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [_tblAccessPoints reloadData];
+    [_tblWandE reloadData];
     
     // Load the data.
     //[self loadData];
@@ -66,16 +66,16 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    self.tblAccessPoints.delegate = self;
-    self.tblAccessPoints.dataSource = self;
+    self.tblWandE.delegate = self;
+    self.tblWandE.dataSource = self;
     
-    self.tblAccessPoints.rowHeight = 71.0f;
+    self.tblWandE.rowHeight = 71.0f;
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"AccessPoint"];
-    self.accessPoints = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"WebAndEmail"];
+    self.WandE = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [_tblAccessPoints reloadData];
+    [_tblWandE reloadData];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -107,10 +107,10 @@
      editInfoViewController.delegate = self;
      editInfoViewController.recordIDToEdit = self.recordIDToEdit; */
     
-    if ([[segue identifier] isEqualToString:@"viewAccessPointDetails"]) {
-        NSManagedObject *selectedAccessPoint = [self.accessPoints objectAtIndex:[[self.tblAccessPoints indexPathForSelectedRow] row]];
-        APDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.accessPoint = selectedAccessPoint;
+    if ([[segue identifier] isEqualToString:@"viewWandEDetails"]) {
+        NSManagedObject *selectedWandE = [self.WandE objectAtIndex:[[self.tblWandE indexPathForSelectedRow] row]];
+        WandEDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.wAndE = selectedWandE;
     }
     
 }
@@ -167,13 +167,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //return self.arrCardInfo.count;
-    return self.accessPoints.count;
+    return self.WandE.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // Dequeue the cell.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellAccessPoint" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellWe" forIndexPath:indexPath];
     
     //NSInteger indexOfCardname = [self.dbManager.arrColumnNames indexOfObject:@"cardname"];
     //NSInteger indexOfCardType = [self.dbManager.arrColumnNames indexOfObject:@"cardtype"];
@@ -184,14 +184,14 @@
     // Set the loaded data to the appropriate cell labels.
     //cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfCardname]];
     
-    NSManagedObject *accessPoint = [self.accessPoints objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [accessPoint valueForKey:@"name"]]];
+    NSManagedObject *wAndE = [self.WandE objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [wAndE valueForKey:@"name"]]];
     cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
     cell.textLabel.textColor = [UIColor colorWithRed:0.275 green:0.314 blue:0.341 alpha:1]; /*#465057*/
     
     //cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfCardType]];
     
-    [cell.detailTextLabel setText:[accessPoint valueForKey:@"password"]];
+    [cell.detailTextLabel setText:[wAndE valueForKey:@"username"]];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
     
@@ -241,7 +241,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.accessPoints objectAtIndex:indexPath.row]];
+        [context deleteObject:[self.WandE objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -250,36 +250,9 @@
         }
         
         // Remove device from table view
-        [self.accessPoints removeObjectAtIndex:indexPath.row];
-        [self.tblAccessPoints deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.WandE removeObjectAtIndex:indexPath.row];
+        [self.tblWandE deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
-
-/*-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
- 
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the selected record.
- // Find the record ID.
- //int recordIDToDelete = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
- 
- // Prepare the query.
- //NSString *query = [NSString stringWithFormat:@"delete from cardInfo where cardInfoID=%d", recordIDToDelete];
- 
- // Execute the query.
- //[self.dbManager executeQuery:query];
- 
- // Reload the table view.
- //[self loadData];
- }
- }*/
-
-#pragma mark - EditInfoViewControllerDelegate method implementation
-
-/*
- -(void)editingInfoWasFinished{
- // Reload the data.
- [self loadData];
- }
- */
 
 @end

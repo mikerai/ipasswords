@@ -44,6 +44,8 @@
     self.tblDevices.delegate = self;
     self.tblDevices.dataSource = self;
     
+    self.tblDevices.rowHeight = 71.f;
+    
     // Initialize the dbManager property.
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
     
@@ -68,6 +70,8 @@
     
     self.tblDevices.delegate = self;
     self.tblDevices.dataSource = self;
+    
+    self.tblDevices.rowHeight = 71.f;
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];

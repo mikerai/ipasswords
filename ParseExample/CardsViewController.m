@@ -43,6 +43,8 @@
     self.tblCards.delegate = self;
     self.tblCards.dataSource = self;
     
+    self.tblCards.rowHeight = 71.0f;
+    
     // Initialize the dbManager property.
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
     
@@ -67,6 +69,8 @@
     
     self.tblCards.delegate = self;
     self.tblCards.dataSource = self;
+    
+    self.tblCards.rowHeight = 71.0f;
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Card"];
@@ -203,16 +207,6 @@
     return 71.0;
 }
 
-
-/*-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    // Get the record ID of the selected name and set it to the recordIDToEdit property.
-    self.recordIDToEdit = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"editInfo" sender:self];
-    //[self performSegueWithIdentifier:@"viewDetails" sender:self];
-}*/
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //self.recordIDToEdit = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
@@ -251,24 +245,6 @@
         [self.tblCards deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
-
-/*-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the selected record.
-        // Find the record ID.
-        //int recordIDToDelete = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-        
-        // Prepare the query.
-        //NSString *query = [NSString stringWithFormat:@"delete from cardInfo where cardInfoID=%d", recordIDToDelete];
-        
-        // Execute the query.
-        //[self.dbManager executeQuery:query];
-        
-        // Reload the table view.
-        //[self loadData];
-    }
-}*/
 
 #pragma mark - EditInfoViewControllerDelegate method implementation
 

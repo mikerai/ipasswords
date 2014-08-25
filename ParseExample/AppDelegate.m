@@ -24,7 +24,8 @@
                   clientKey:@"sPGS8GpYFS0BL5GTKq5THLqJ7cqPLxwLjx41jbX8"];
     
     //[[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:0 green:0.525 blue:1 alpha:1]]; /*#0086ff Blue */
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf*/
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf blue*/
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]]; /*#63a599 green*/
      //[[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:1]]; /*#f299d3 Pink*/
     //NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                              //  [UIColor whiteColor],UITextAttributeTextColor];
@@ -38,11 +39,15 @@
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
     //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:0.5]]; /*#f299d3 Pink*/
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf*/
+    //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf blue*/
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]]; /*#63a599 green*/
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor lightGrayColor]}
-                               forState:UIControlStateDisabled];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor whiteColor]}
+                               forState:UIControlStateNormal];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor whiteColor]}
+                                             forState:UIControlStateSelected];
     
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
@@ -68,20 +73,6 @@
 {
     return UIStatusBarStyleLightContent;
 }
-
-/*#define DB_NAME @"password.sql"
-#define DB_FULLPATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:DB_NAME]
-
-
-+ (void)createDatabase
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:DB_FULLPATH]) {
-        NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:DB_NAME];
-        [fileManager copyItemAtPath:bundlePath toPath:DB_FULLPATH error:nil];
-    }
-    
-}*/
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
