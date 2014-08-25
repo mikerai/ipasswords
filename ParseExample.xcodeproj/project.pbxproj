@@ -29,6 +29,11 @@
 		8B40A22819A29EDF00545A8A /* hair@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B40A22719A29EDF00545A8A /* hair@2x.jpg */; };
 		8B40A22A19A2A3B500545A8A /* supernicebg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B40A22919A2A3B500545A8A /* supernicebg@2x.jpg */; };
 		8B40A23319A2AC4800545A8A /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B40A23219A2AC4800545A8A /* EditInfoViewController.m */; };
+		8B4518E219ABAE4C007EF4BB /* APViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4518E119ABAE4C007EF4BB /* APViewController.m */; };
+		8B4518E519ABAE61007EF4BB /* APDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4518E419ABAE61007EF4BB /* APDetailViewController.m */; };
+		8B4518E819ABAE74007EF4BB /* EditAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4518E719ABAE74007EF4BB /* EditAPViewController.m */; };
+		8B4518EA19ABBDCD007EF4BB /* ios8bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4518E919ABBDCD007EF4BB /* ios8bg@2x.png */; };
+		8B4518EC19ABBE5A007EF4BB /* ios8-hero@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4518EB19ABBE5A007EF4BB /* ios8-hero@2x.png */; };
 		8B52588019A7F27B007EADF8 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B52587F19A7F27B007EADF8 /* calendar@2x.png */; };
 		8B785EDE19A690D100DE57A1 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B785ECE19A690D100DE57A1 /* Icon-40.png */; };
 		8B785EDF19A690D100DE57A1 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B785ECF19A690D100DE57A1 /* Icon-40@2x.png */; };
@@ -109,6 +114,14 @@
 		8B40A22919A2A3B500545A8A /* supernicebg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "supernicebg@2x.jpg"; sourceTree = "<group>"; };
 		8B40A23119A2AC4800545A8A /* EditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
 		8B40A23219A2AC4800545A8A /* EditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
+		8B4518E019ABAE4C007EF4BB /* APViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APViewController.h; sourceTree = "<group>"; };
+		8B4518E119ABAE4C007EF4BB /* APViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APViewController.m; sourceTree = "<group>"; };
+		8B4518E319ABAE61007EF4BB /* APDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APDetailViewController.h; sourceTree = "<group>"; };
+		8B4518E419ABAE61007EF4BB /* APDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APDetailViewController.m; sourceTree = "<group>"; };
+		8B4518E619ABAE74007EF4BB /* EditAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAPViewController.h; sourceTree = "<group>"; };
+		8B4518E719ABAE74007EF4BB /* EditAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAPViewController.m; sourceTree = "<group>"; };
+		8B4518E919ABBDCD007EF4BB /* ios8bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios8bg@2x.png"; sourceTree = "<group>"; };
+		8B4518EB19ABBE5A007EF4BB /* ios8-hero@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios8-hero@2x.png"; sourceTree = "<group>"; };
 		8B52587F19A7F27B007EADF8 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		8B785ECE19A690D100DE57A1 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		8B785ECF19A690D100DE57A1 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -256,6 +269,12 @@
 		34A47E9719AACE340030720C /* Access Points */ = {
 			isa = PBXGroup;
 			children = (
+				8B4518E019ABAE4C007EF4BB /* APViewController.h */,
+				8B4518E119ABAE4C007EF4BB /* APViewController.m */,
+				8B4518E319ABAE61007EF4BB /* APDetailViewController.h */,
+				8B4518E419ABAE61007EF4BB /* APDetailViewController.m */,
+				8B4518E619ABAE74007EF4BB /* EditAPViewController.h */,
+				8B4518E719ABAE74007EF4BB /* EditAPViewController.m */,
 			);
 			name = "Access Points";
 			sourceTree = "<group>";
@@ -281,6 +300,8 @@
 			children = (
 				8B785ECD19A690C100DE57A1 /* icons */,
 				8B21C03619A6629200424BD6 /* cross@2x.png */,
+				8B4518EB19ABBE5A007EF4BB /* ios8-hero@2x.png */,
+				8B4518E919ABBDCD007EF4BB /* ios8bg@2x.png */,
 				34A47E8E19AABD2C0030720C /* Smartphone_Outgoing@2x.png */,
 				34A47E8F19AABD2C0030720C /* Mobile_Signal@2x.png */,
 				34A47E9019AABD2C0030720C /* Dollar@2x.png */,
@@ -383,16 +404,16 @@
 			isa = PBXGroup;
 			children = (
 				CEC5DD9716E8CC6400F6F75F /* MainStoryboard.storyboard */,
-				34A47E9819AACE3E0030720C /* W & e */,
-				34A47E9719AACE340030720C /* Access Points */,
-				34A47E9619AACE230030720C /* Devices */,
-				34A47E8519AA81F90030720C /* Cards */,
-				8B785EEE19A695BA00DE57A1 /* sounds */,
-				8B1EC3D219A6729000C50213 /* Custom Segue */,
-				8B40A22B19A2A6E600545A8A /* DB */,
-				8B40A21E19A2837600545A8A /* images */,
 				343671A419A313C80092F85A /* Delegate */,
+				8B40A22B19A2A6E600545A8A /* DB */,
+				8B1EC3D219A6729000C50213 /* Custom Segue */,
+				8B785EEE19A695BA00DE57A1 /* sounds */,
+				8B40A21E19A2837600545A8A /* images */,
 				343671A519A313D60092F85A /* Sign up & Login */,
+				34A47E8519AA81F90030720C /* Cards */,
+				34A47E9619AACE230030720C /* Devices */,
+				34A47E9719AACE340030720C /* Access Points */,
+				34A47E9819AACE3E0030720C /* W & e */,
 				CEC5DD8616E8CC6400F6F75F /* Supporting Files */,
 				343671A319A313AD0092F85A /* Prototype cells Phase 2 */,
 			);
@@ -490,6 +511,8 @@
 				CEC5DD9216E8CC6400F6F75F /* Default.png in Resources */,
 				CEC5DD9416E8CC6400F6F75F /* Default@2x.png in Resources */,
 				8B785EEB19A690D100DE57A1 /* Icon@2x.png in Resources */,
+				8B4518EA19ABBDCD007EF4BB /* ios8bg@2x.png in Resources */,
+				8B4518EC19ABBE5A007EF4BB /* ios8-hero@2x.png in Resources */,
 				8B785EEC19A690D100DE57A1 /* iTunesArtwork.png in Resources */,
 				8B21C03719A6629200424BD6 /* cross@2x.png in Resources */,
 				8B785EE119A690D100DE57A1 /* Icon-60@2x.png in Resources */,
@@ -528,14 +551,17 @@
 				345DF00819A43B8500D3511A /* CoreData.xcdatamodeld in Sources */,
 				3436718119A2D83F0092F85A /* DetailViewController.m in Sources */,
 				8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */,
+				8B4518E819ABAE74007EF4BB /* EditAPViewController.m in Sources */,
 				34A47E9B19AACEA60030720C /* DeviceViewController.m in Sources */,
 				CEC5DD9016E8CC6400F6F75F /* AppDelegate.m in Sources */,
 				34A47E9E19AACEBC0030720C /* DeviceDetailViewController.m in Sources */,
 				8B21C03519A65FFF00424BD6 /* ToDoListViewController.m in Sources */,
 				CEC5DD9C16E8CC6400F6F75F /* CardsViewController.m in Sources */,
 				8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */,
+				8B4518E519ABAE61007EF4BB /* APDetailViewController.m in Sources */,
 				CEC5DDC016E8CDC000F6F75F /* ParseExampleCell.m in Sources */,
 				CE1D8D0017A15B220010FB2A /* ImageExampleCell.m in Sources */,
+				8B4518E219ABAE4C007EF4BB /* APViewController.m in Sources */,
 				CE45BAD517B4935A0017FFEB /* LoginViewController.m in Sources */,
 				34A47EA119AAD2140030720C /* EditDeviceViewController.m in Sources */,
 			);

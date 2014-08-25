@@ -1,20 +1,20 @@
 //
-//  DeviceViewController.m
+//  APViewController.m
 //  ParseExample
 //
-//  Created by Miguel Angel Rodriguez Alvarez Icaza on 24/08/14.
+//  Created by Miguel Ángel Rodríguez Álvarez Icaza on 8/25/14.
 //  Copyright (c) 2014 Phiveleven. All rights reserved.
 //
 
-#import "DeviceViewController.h"
+#import "APViewController.h"
 
-@interface DeviceViewController ()
+@interface APViewController ()
 
-@property (strong) NSMutableArray *devices;
+@property (strong) NSMutableArray *accessPoints;
 
 @end
 
-@implementation DeviceViewController
+@implementation APViewController
 
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
@@ -41,17 +41,17 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.tblDevices.delegate = self;
-    self.tblDevices.dataSource = self;
+    self.tblAccessPoints.delegate = self;
+    self.tblAccessPoints.dataSource = self;
     
     // Initialize the dbManager property.
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
-    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"AccessPoint"];
+    self.accessPoints = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [_tblDevices reloadData];
+    [_tblAccessPoints reloadData];
     
     // Load the data.
     //[self loadData];
@@ -66,14 +66,14 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    self.tblDevices.delegate = self;
-    self.tblDevices.dataSource = self;
+    self.tblAccessPoints.delegate = self;
+    self.tblAccessPoints.dataSource = self;
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
-    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"AccessPoint"];
+    self.accessPoints = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [_tblDevices reloadData];
+    [_tblAccessPoints reloadData];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -105,10 +105,10 @@
      editInfoViewController.delegate = self;
      editInfoViewController.recordIDToEdit = self.recordIDToEdit; */
     
-    if ([[segue identifier] isEqualToString:@"viewDeviceDetails"]) {
-        NSManagedObject *selectedDevice = [self.devices objectAtIndex:[[self.tblDevices indexPathForSelectedRow] row]];
-        DeviceDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.device = selectedDevice;
+    if ([[segue identifier] isEqualToString:@"viewAccessPointDetails"]) {
+        NSManagedObject *selectedAccessPoint = [self.accessPoints objectAtIndex:[[self.tblAccessPoints indexPathForSelectedRow] row]];
+        APDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.accessPoint = selectedAccessPoint;
     }
     
 }
@@ -165,13 +165,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //return self.arrCardInfo.count;
-    return self.devices.count;
+    return self.accessPoints.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // Dequeue the cell.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellDevice" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellAccessPoint" forIndexPath:indexPath];
     
     //NSInteger indexOfCardname = [self.dbManager.arrColumnNames indexOfObject:@"cardname"];
     //NSInteger indexOfCardType = [self.dbManager.arrColumnNames indexOfObject:@"cardtype"];
@@ -182,14 +182,14 @@
     // Set the loaded data to the appropriate cell labels.
     //cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfCardname]];
     
-    NSManagedObject *device = [self.devices objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [device valueForKey:@"name"]]];
+    NSManagedObject *accessPoint = [self.accessPoints objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [accessPoint valueForKey:@"name"]]];
     cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
     cell.textLabel.textColor = [UIColor colorWithRed:0.275 green:0.314 blue:0.341 alpha:1]; /*#465057*/
     
     //cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfCardType]];
     
-    [cell.detailTextLabel setText:[device valueForKey:@"username"]];
+    [cell.detailTextLabel setText:[accessPoint valueForKey:@"password"]];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
     
@@ -239,7 +239,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
+        [context deleteObject:[self.accessPoints objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -248,8 +248,8 @@
         }
         
         // Remove device from table view
-        [self.devices removeObjectAtIndex:indexPath.row];
-        [self.tblDevices deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.accessPoints removeObjectAtIndex:indexPath.row];
+        [self.tblAccessPoints deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -279,6 +279,5 @@
  [self loadData];
  }
  */
-
 
 @end

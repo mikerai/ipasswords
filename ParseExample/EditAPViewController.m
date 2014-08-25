@@ -1,24 +1,24 @@
 //
-//  EditDeviceViewController.m
+//  EditAPViewController.m
 //  ParseExample
 //
-//  Created by Miguel Angel Rodriguez Alvarez Icaza on 24/08/14.
+//  Created by Miguel Ángel Rodríguez Álvarez Icaza on 8/25/14.
 //  Copyright (c) 2014 Phiveleven. All rights reserved.
 //
 
-#import "EditDeviceViewController.h"
+#import "EditAPViewController.h"
 
-@interface EditDeviceViewController ()
+@interface EditAPViewController ()
 
 @end
 
-@implementation EditDeviceViewController {
-    
+@implementation EditAPViewController {
+
 @private BOOL showPlaceHolder;
-    
+
 }
 
-@synthesize device;
+@synthesize accessPoint;
 
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
@@ -52,11 +52,11 @@
     
     [self setPlaceholder];
     
-    if (self.device) {
-        self.deviceName.text = [device valueForKey:@"name"];
-        self.deviceUsername.text = [device valueForKey:@"username"];
-        self.devicePassword.text = [device valueForKey:@"password"];
-        self.deviceDetails.text = [device valueForKey:@"details"];
+    if (self.accessPoint) {
+        self.accessPointName.text = [accessPoint valueForKey:@"name"];
+        self.accessPointUsername.text = [accessPoint valueForKey:@"username"];
+        self.accessPointPassword.text = [accessPoint valueForKey:@"password"];
+        self.accessPointDetails.text = [accessPoint valueForKey:@"details"];
     }
 }
 
@@ -68,11 +68,11 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    if (self.device) {
-        self.deviceName.text = [device valueForKey:@"name"];
-        self.deviceUsername.text = [device valueForKey:@"username"];
-        self.devicePassword.text = [device valueForKey:@"password"];
-        self.deviceDetails.text = [device valueForKey:@"details"];
+    if (self.accessPoint) {
+        self.accessPointName.text = [accessPoint valueForKey:@"name"];
+        self.accessPointUsername.text = [accessPoint valueForKey:@"username"];
+        self.accessPointPassword.text = [accessPoint valueForKey:@"password"];
+        self.accessPointDetails.text = [accessPoint valueForKey:@"details"];
     }
 }
 
@@ -84,8 +84,8 @@
 
 - (void)setPlaceholder
 {
-    _deviceDetails.text = NSLocalizedString(@"Notes & comments", @"placeholder");
-    _deviceDetails.textColor = [UIColor lightGrayColor];
+    _accessPointDetails.text = NSLocalizedString(@"Notes & comments", @"placeholder");
+    _accessPointDetails.textColor = [UIColor lightGrayColor];
     self->showPlaceHolder = YES; //we save the state so it won't disappear in case you want to re-edit it
 }
 
@@ -113,20 +113,20 @@
     
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    if (self.device) {
-        // Update existing device
-        [self.device setValue:self.deviceName.text forKey:@"name"];
-        [self.device setValue:self.deviceUsername.text forKey:@"username"];
-        [self.device setValue:self.devicePassword.text forKey:@"password"];
-        [self.device setValue:self.deviceDetails.text forKey:@"details"];
+    if (self.accessPoint) {
+        // Update existing accessPoint
+        [self.accessPoint setValue:self.accessPointName.text forKey:@"name"];
+        [self.accessPoint setValue:self.accessPointUsername.text forKey:@"username"];
+        [self.accessPoint setValue:self.accessPointPassword.text forKey:@"password"];
+        [self.accessPoint setValue:self.accessPointDetails.text forKey:@"details"];
         
     } else {
-        // Create a new device
-        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
-        [newDevice setValue:self.deviceName.text forKey:@"name"];
-        [newDevice setValue:self.deviceUsername.text forKey:@"username"];
-        [newDevice setValue:self.devicePassword.text forKey:@"password"];
-        [newDevice setValue:self.deviceDetails.text forKey:@"details"];
+        // Create a new accessPoint
+        NSManagedObject *newaccessPoint = [NSEntityDescription insertNewObjectForEntityForName:@"AccessPoint" inManagedObjectContext:context];
+        [newaccessPoint setValue:self.accessPointName.text forKey:@"name"];
+        [newaccessPoint setValue:self.accessPointUsername.text forKey:@"username"];
+        [newaccessPoint setValue:self.accessPointPassword.text forKey:@"password"];
+        [newaccessPoint setValue:self.accessPointDetails.text forKey:@"details"];
         
         NSLog(@"Values saved!");
     }
@@ -147,7 +147,7 @@
 {
     if (self->showPlaceHolder == YES)
     {
-        _deviceDetails.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
+        _accessPointDetails.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
         textView.text = @"";
         self->showPlaceHolder = NO;
     }    [textView becomeFirstResponder];
@@ -165,9 +165,9 @@
 
 - (void)resignKeyboard
 {
-    [_deviceDetails resignFirstResponder];
+    [_accessPointDetails resignFirstResponder];
     //here if you created a button like I did to resign the keyboard, you should hide it
-    if (_deviceDetails.text.length == 0) {
+    if (_accessPointDetails.text.length == 0) {
         [self setPlaceholder];
     }
 }

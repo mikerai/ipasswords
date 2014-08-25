@@ -59,25 +59,25 @@
     //_view.backgroundColor = [UIColor colorWithRed:0.251 green:0.259 blue:0.267 alpha:1]; /*#404244*/
     
     _loginButton.backgroundColor = [UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]; /*#4992bf*/
-    self.loginButton.layer.cornerRadius = 4.0f;
+    //self.loginButton.layer.cornerRadius = 4.0f;
     
     _alreadyButton.backgroundColor = [UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]; /*#4992bf*/
-    self.alreadyButton.layer.cornerRadius = 4.0f;
+    //self.alreadyButton.layer.cornerRadius = 4.0f;
     
     _registerButton.backgroundColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
-    self.registerButton.layer.cornerRadius = 4.0f;
+    //self.registerButton.layer.cornerRadius = 4.0f;
     
     _registerUser.backgroundColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
-    self.registerUser.layer.cornerRadius = 4.0f;
+    //self.registerUser.layer.cornerRadius = 4.0f;
     
     _cancelButton.backgroundColor = [UIColor colorWithRed:0.635 green:0.18 blue:0.31 alpha:1]; /*#a22e4f*/
-    self.cancelButton.layer.cornerRadius = 4.0f;
+    //self.cancelButton.layer.cornerRadius = 4.0f;
     
     _cancelRegister.backgroundColor = [UIColor colorWithRed:0.635 green:0.18 blue:0.31 alpha:1]; /*#a22e4f*/
-    self.cancelRegister.layer.cornerRadius = 4.0f;
+    //self.cancelRegister.layer.cornerRadius = 4.0f;
     
     _forgotButton.backgroundColor = [UIColor colorWithRed:0.498 green:0.392 blue:0.71 alpha:1]; /*#7f64b5*/
-    self.forgotButton.layer.cornerRadius = 4.0f;
+    //self.forgotButton.layer.cornerRadius = 4.0f;
     
     self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
     self.profilePic.clipsToBounds = YES;

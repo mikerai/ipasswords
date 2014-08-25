@@ -53,7 +53,7 @@
     _datePicker.minimumDate =
     [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];*/
     
-    self.saveButton.layer.cornerRadius = 4.0f;
+    //self.saveButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,7 +127,7 @@
     
     //[localNotification setTimeZone: [NSTimeZone defaultTimeZone]];
     [localNotification setRepeatInterval: NSMonthCalendarUnit];
-    NSLog(@"Repeat would be %u", localNotification.repeatInterval);
+    NSLog(@"Repeat would be %lu", localNotification.repeatInterval);
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     

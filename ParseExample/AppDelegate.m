@@ -23,8 +23,9 @@
     [Parse setApplicationId:@"PBnkMYqnoPYa4iIrzHHL1EtaKlcyOLYhJQLtjDWz"
                   clientKey:@"sPGS8GpYFS0BL5GTKq5THLqJ7cqPLxwLjx41jbX8"];
     
-    //[[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:0 green:0.525 blue:1 alpha:1]]; /*#0086ff*/
-    [[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:1]]; /*#f299d3*/
+    //[[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:0 green:0.525 blue:1 alpha:1]]; /*#0086ff Blue */
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf*/
+     //[[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:1]]; /*#f299d3 Pink*/
     //NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                              //  [UIColor whiteColor],UITextAttributeTextColor];
     
@@ -36,8 +37,13 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:0.5]]; /*#f299d3*/
+    //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:0.5]]; /*#f299d3 Pink*/
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf*/
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor lightGrayColor]}
+                               forState:UIControlStateDisabled];
+    
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:

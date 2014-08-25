@@ -44,7 +44,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    self.mainScrollView.contentSize = CGSizeMake(320, 700);
+    self.mainScrollView.contentSize = CGSizeMake(320, 640);
 }
 
 - (void)viewDidLoad
