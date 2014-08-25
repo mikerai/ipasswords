@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-#import "ParseExampleViewController.h"
+#import "CardsViewController.h"
 #import "EditInfoViewController.h"
 #import "ToDoListViewController.h"
 //#import "DBManager.h"
@@ -41,6 +41,10 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidLayoutSubviews {
+    self.mainScrollView.contentSize = CGSizeMake(320, 700);
 }
 
 - (void)viewDidLoad

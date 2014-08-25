@@ -14,6 +14,7 @@
 
 @property (nonatomic) int recordIDToEdit;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *txtCardname;
 @property (weak, nonatomic) IBOutlet UILabel *txtCardtype;
 @property (weak, nonatomic) IBOutlet UILabel *txtCardnumber;

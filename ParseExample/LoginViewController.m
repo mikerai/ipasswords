@@ -54,10 +54,10 @@
     
     //_view.backgroundColor = [UIColor colorWithRed:0.251 green:0.259 blue:0.267 alpha:1]; /*#404244*/
     
-    _loginButton.backgroundColor = [UIColor colorWithRed:0.937 green:0.498 blue:0.235 alpha:1]; /*#ef7f3c*/
+    _loginButton.backgroundColor = [UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]; /*#4992bf*/
     self.loginButton.layer.cornerRadius = 4.0f;
     
-    _alreadyButton.backgroundColor = [UIColor colorWithRed:0.937 green:0.498 blue:0.235 alpha:1]; /*#ef7f3c*/
+    _alreadyButton.backgroundColor = [UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]; /*#4992bf*/
     self.alreadyButton.layer.cornerRadius = 4.0f;
     
     _registerButton.backgroundColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/

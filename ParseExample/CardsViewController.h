@@ -14,7 +14,7 @@
 #import "DetailViewController.h"
 #import "LoginViewController.h"
 
-@interface ParseExampleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface CardsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
 }
 

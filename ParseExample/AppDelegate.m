@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Nicholas Barrowclough. All rights reserved.
 //
 
-#import "ParseExampleAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation ParseExampleAppDelegate
+@implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -17,6 +17,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+     sleep(1);
     
     [Parse setApplicationId:@"PBnkMYqnoPYa4iIrzHHL1EtaKlcyOLYhJQLtjDWz"
                   clientKey:@"sPGS8GpYFS0BL5GTKq5THLqJ7cqPLxwLjx41jbX8"];
@@ -34,7 +36,8 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
-    sleep(1);
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:0.5]]; /*#f299d3*/
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:

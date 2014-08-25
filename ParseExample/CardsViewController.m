@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Nicholas Barrowclough. All rights reserved.
 //
 
-#import "ParseExampleViewController.h"
+#import "CardsViewController.h"
 //#import "DBManager.h"
 
-@interface ParseExampleViewController ()
+@interface CardsViewController ()
 
 @property (strong) NSMutableArray *cards;
 //@property (nonatomic, strong) DBManager *dbManager;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation ParseExampleViewController
+@implementation CardsViewController
 
 
 - (NSManagedObjectContext *)managedObjectContext {

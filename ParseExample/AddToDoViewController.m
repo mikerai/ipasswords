@@ -99,7 +99,7 @@
     
     NSCalendar *calender = [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay: myInt];
+    [components setDay: myInt - 4];
     [components setMonth: month + 1];
     [components setYear: year];
     [components setHour: hour];
@@ -121,13 +121,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     
-    NSLog(@"Fire Date would be %@", localNotification.fireDate);
-    
     localNotification.repeatInterval = NSMonthCalendarUnit;
+    
+    NSLog(@"Fire Date would be %@", localNotification.fireDate);
     
     //[localNotification setTimeZone: [NSTimeZone defaultTimeZone]];
     [localNotification setRepeatInterval: NSMonthCalendarUnit];
-    NSLog(@"Repeat would be %lu", localNotification.repeatInterval);
+    NSLog(@"Repeat would be %u", localNotification.repeatInterval);
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
