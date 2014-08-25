@@ -15,6 +15,9 @@
 		34A47E9319AABD2C0030720C /* Mobile_Signal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A47E8F19AABD2C0030720C /* Mobile_Signal@2x.png */; };
 		34A47E9419AABD2C0030720C /* Dollar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A47E9019AABD2C0030720C /* Dollar@2x.png */; };
 		34A47E9519AABD2C0030720C /* Interface_Three_Panel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A47E9119AABD2C0030720C /* Interface_Three_Panel@2x.png */; };
+		34A47E9B19AACEA60030720C /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A47E9A19AACEA60030720C /* DeviceViewController.m */; };
+		34A47E9E19AACEBC0030720C /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A47E9D19AACEBC0030720C /* DeviceDetailViewController.m */; };
+		34A47EA119AAD2140030720C /* EditDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A47EA019AAD2140030720C /* EditDeviceViewController.m */; };
 		8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EC3D419A672A900C50213 /* CustomSegue.m */; };
 		8B21C02B19A65A1B00424BD6 /* Alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */; };
 		8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */; };
@@ -85,6 +88,12 @@
 		34A47E8F19AABD2C0030720C /* Mobile_Signal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mobile_Signal@2x.png"; sourceTree = "<group>"; };
 		34A47E9019AABD2C0030720C /* Dollar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dollar@2x.png"; sourceTree = "<group>"; };
 		34A47E9119AABD2C0030720C /* Interface_Three_Panel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interface_Three_Panel@2x.png"; sourceTree = "<group>"; };
+		34A47E9919AACEA60030720C /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
+		34A47E9A19AACEA60030720C /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
+		34A47E9C19AACEBC0030720C /* DeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailViewController.h; sourceTree = "<group>"; };
+		34A47E9D19AACEBC0030720C /* DeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailViewController.m; sourceTree = "<group>"; };
+		34A47E9F19AAD2140030720C /* EditDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDeviceViewController.h; sourceTree = "<group>"; };
+		34A47EA019AAD2140030720C /* EditDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDeviceViewController.m; sourceTree = "<group>"; };
 		8B1EC3D319A672A900C50213 /* CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegue.h; sourceTree = "<group>"; };
 		8B1EC3D419A672A900C50213 /* CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegue.m; sourceTree = "<group>"; };
 		8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alarm@2x.png"; sourceTree = "<group>"; };
@@ -219,16 +228,43 @@
 			children = (
 				CEC5DD9A16E8CC6400F6F75F /* CardsViewController.h */,
 				CEC5DD9B16E8CC6400F6F75F /* CardsViewController.m */,
-				8B40A23119A2AC4800545A8A /* EditInfoViewController.h */,
-				8B40A23219A2AC4800545A8A /* EditInfoViewController.m */,
 				3436717F19A2D83F0092F85A /* DetailViewController.h */,
 				3436718019A2D83F0092F85A /* DetailViewController.m */,
+				8B40A23119A2AC4800545A8A /* EditInfoViewController.h */,
+				8B40A23219A2AC4800545A8A /* EditInfoViewController.m */,
 				8B21C03019A65FFF00424BD6 /* AddToDoViewController.h */,
 				8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */,
 				8B21C03219A65FFF00424BD6 /* ToDoListViewController.h */,
 				8B21C03319A65FFF00424BD6 /* ToDoListViewController.m */,
 			);
 			name = Cards;
+			sourceTree = "<group>";
+		};
+		34A47E9619AACE230030720C /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				34A47E9919AACEA60030720C /* DeviceViewController.h */,
+				34A47E9A19AACEA60030720C /* DeviceViewController.m */,
+				34A47E9C19AACEBC0030720C /* DeviceDetailViewController.h */,
+				34A47E9D19AACEBC0030720C /* DeviceDetailViewController.m */,
+				34A47E9F19AAD2140030720C /* EditDeviceViewController.h */,
+				34A47EA019AAD2140030720C /* EditDeviceViewController.m */,
+			);
+			name = Devices;
+			sourceTree = "<group>";
+		};
+		34A47E9719AACE340030720C /* Access Points */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Access Points";
+			sourceTree = "<group>";
+		};
+		34A47E9819AACE3E0030720C /* W & e */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "W & e";
 			sourceTree = "<group>";
 		};
 		8B1EC3D219A6729000C50213 /* Custom Segue */ = {
@@ -346,14 +382,17 @@
 		CEC5DD8516E8CC6400F6F75F /* My Passwords */ = {
 			isa = PBXGroup;
 			children = (
+				CEC5DD9716E8CC6400F6F75F /* MainStoryboard.storyboard */,
+				34A47E9819AACE3E0030720C /* W & e */,
+				34A47E9719AACE340030720C /* Access Points */,
+				34A47E9619AACE230030720C /* Devices */,
+				34A47E8519AA81F90030720C /* Cards */,
 				8B785EEE19A695BA00DE57A1 /* sounds */,
 				8B1EC3D219A6729000C50213 /* Custom Segue */,
 				8B40A22B19A2A6E600545A8A /* DB */,
 				8B40A21E19A2837600545A8A /* images */,
 				343671A419A313C80092F85A /* Delegate */,
 				343671A519A313D60092F85A /* Sign up & Login */,
-				CEC5DD9716E8CC6400F6F75F /* MainStoryboard.storyboard */,
-				34A47E8519AA81F90030720C /* Cards */,
 				CEC5DD8616E8CC6400F6F75F /* Supporting Files */,
 				343671A319A313AD0092F85A /* Prototype cells Phase 2 */,
 			);
@@ -489,13 +528,16 @@
 				345DF00819A43B8500D3511A /* CoreData.xcdatamodeld in Sources */,
 				3436718119A2D83F0092F85A /* DetailViewController.m in Sources */,
 				8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */,
+				34A47E9B19AACEA60030720C /* DeviceViewController.m in Sources */,
 				CEC5DD9016E8CC6400F6F75F /* AppDelegate.m in Sources */,
+				34A47E9E19AACEBC0030720C /* DeviceDetailViewController.m in Sources */,
 				8B21C03519A65FFF00424BD6 /* ToDoListViewController.m in Sources */,
 				CEC5DD9C16E8CC6400F6F75F /* CardsViewController.m in Sources */,
 				8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */,
 				CEC5DDC016E8CDC000F6F75F /* ParseExampleCell.m in Sources */,
 				CE1D8D0017A15B220010FB2A /* ImageExampleCell.m in Sources */,
 				CE45BAD517B4935A0017FFEB /* LoginViewController.m in Sources */,
+				34A47EA119AAD2140030720C /* EditDeviceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

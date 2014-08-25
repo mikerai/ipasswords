@@ -1,28 +1,20 @@
 //
-//  ParseExampleViewController.m
+//  DeviceViewController.m
 //  ParseExample
 //
-//  Created by Nick Barrowclough on 3/7/13.
-//  Copyright (c) 2013 Nicholas Barrowclough. All rights reserved.
+//  Created by Miguel Angel Rodriguez Alvarez Icaza on 24/08/14.
+//  Copyright (c) 2014 Phiveleven. All rights reserved.
 //
 
-#import "CardsViewController.h"
-//#import "DBManager.h"
+#import "DeviceViewController.h"
 
-@interface CardsViewController ()
+@interface DeviceViewController ()
 
-@property (strong) NSMutableArray *cards;
-//@property (nonatomic, strong) DBManager *dbManager;
-//@property (nonatomic, strong) NSArray *arrCardInfo;
-//@property (nonatomic) int recordIDToEdit;
-
-
-//-(void)loadData;
+@property (strong) NSMutableArray *devices;
 
 @end
 
-@implementation CardsViewController
-
+@implementation DeviceViewController
 
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
@@ -33,6 +25,15 @@
     return context;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -40,17 +41,17 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.tblCards.delegate = self;
-    self.tblCards.dataSource = self;
+    self.tblDevices.delegate = self;
+    self.tblDevices.dataSource = self;
     
     // Initialize the dbManager property.
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Card"];
-    self.cards = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
+    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [_tblCards reloadData];
+    [_tblDevices reloadData];
     
     // Load the data.
     //[self loadData];
@@ -65,14 +66,14 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    self.tblCards.delegate = self;
-    self.tblCards.dataSource = self;
+    self.tblDevices.delegate = self;
+    self.tblDevices.dataSource = self;
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Card"];
-    self.cards = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
+    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [_tblCards reloadData];
+    [_tblDevices reloadData];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -90,24 +91,24 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     /*if ([[segue identifier] isEqualToString:@"editInfo"]) {
-        
-        
-    }
+     
+     
+     }
+     
+     if ([[segue identifier] isEqualToString:@"viewDetails"]) {
+     DetailViewController *detailViewController = [segue destinationViewController];
+     detailViewController.delegate = self;
+     detailViewController.recordIDToEdit = self.recordIDToEdit;
+     }
+     
+     EditInfoViewController *editInfoViewController = [segue destinationViewController];
+     editInfoViewController.delegate = self;
+     editInfoViewController.recordIDToEdit = self.recordIDToEdit; */
     
-    if ([[segue identifier] isEqualToString:@"viewDetails"]) {
-        DetailViewController *detailViewController = [segue destinationViewController];
-        detailViewController.delegate = self;
-        detailViewController.recordIDToEdit = self.recordIDToEdit;
-    }
-    
-    EditInfoViewController *editInfoViewController = [segue destinationViewController];
-    editInfoViewController.delegate = self;
-    editInfoViewController.recordIDToEdit = self.recordIDToEdit; */
-    
-    if ([[segue identifier] isEqualToString:@"viewDetails"]) {
-        NSManagedObject *selectedCard = [self.cards objectAtIndex:[[self.tblCards indexPathForSelectedRow] row]];
-        DetailViewController *destViewController = segue.destinationViewController;
-        destViewController.card = selectedCard;
+    if ([[segue identifier] isEqualToString:@"viewDeviceDetails"]) {
+        NSManagedObject *selectedDevice = [self.devices objectAtIndex:[[self.tblDevices indexPathForSelectedRow] row]];
+        DeviceDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.device = selectedDevice;
     }
     
 }
@@ -115,12 +116,12 @@
 #pragma mark - IBAction method implementation
 
 /*- (IBAction)addNewRecord:(id)sender {
-    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
-    //self.recordIDToEdit = -1;
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"editInfo" sender:self];
-}*/
+ // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+ //self.recordIDToEdit = -1;
+ 
+ // Perform the segue.
+ [self performSegueWithIdentifier:@"editInfo" sender:self];
+ }*/
 
 -(IBAction)logOut:(id)sender {
     
@@ -133,23 +134,22 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-
 #pragma mark - Private method implementation
 /*
--(void)loadData{
-    // Form the query.
-    NSString *query = @"select * from cardInfo";
-    
-    // Get the results.
-    if (self.arrCardInfo != nil) {
-        self.arrCardInfo = nil;
-    }
-    self.arrCardInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    
-    // Reload the table view.
-    [self.tblCards reloadData];
-}
-*/
+ -(void)loadData{
+ // Form the query.
+ NSString *query = @"select * from cardInfo";
+ 
+ // Get the results.
+ if (self.arrCardInfo != nil) {
+ self.arrCardInfo = nil;
+ }
+ self.arrCardInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+ 
+ // Reload the table view.
+ [self.tblCards reloadData];
+ }
+ */
 
 #pragma mark - UITableView method implementation
 
@@ -165,13 +165,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //return self.arrCardInfo.count;
-    return self.cards.count;
+    return self.devices.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // Dequeue the cell.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellRecord" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellDevice" forIndexPath:indexPath];
     
     //NSInteger indexOfCardname = [self.dbManager.arrColumnNames indexOfObject:@"cardname"];
     //NSInteger indexOfCardType = [self.dbManager.arrColumnNames indexOfObject:@"cardtype"];
@@ -182,14 +182,14 @@
     // Set the loaded data to the appropriate cell labels.
     //cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfCardname]];
     
-    NSManagedObject *card = [self.cards objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [card valueForKey:@"name"]]];
+    NSManagedObject *device = [self.devices objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [device valueForKey:@"name"]]];
     cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
     cell.textLabel.textColor = [UIColor colorWithRed:0.275 green:0.314 blue:0.341 alpha:1]; /*#465057*/
     
     //cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfCardType]];
     
-    [cell.detailTextLabel setText:[card valueForKey:@"type"]];
+    [cell.detailTextLabel setText:[device valueForKey:@"type"]];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]; /*#63a599*/
     
@@ -205,13 +205,13 @@
 
 
 /*-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    // Get the record ID of the selected name and set it to the recordIDToEdit property.
-    self.recordIDToEdit = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-    
-    // Perform the segue.
-    [self performSegueWithIdentifier:@"editInfo" sender:self];
-    //[self performSegueWithIdentifier:@"viewDetails" sender:self];
-}*/
+ // Get the record ID of the selected name and set it to the recordIDToEdit property.
+ self.recordIDToEdit = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+ 
+ // Perform the segue.
+ [self performSegueWithIdentifier:@"editInfo" sender:self];
+ //[self performSegueWithIdentifier:@"viewDetails" sender:self];
+ }*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -238,7 +238,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.cards objectAtIndex:indexPath.row]];
+        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -247,36 +247,37 @@
         }
         
         // Remove device from table view
-        [self.cards removeObjectAtIndex:indexPath.row];
-        [self.tblCards deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.devices removeObjectAtIndex:indexPath.row];
+        [self.tblDevices deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
 /*-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the selected record.
-        // Find the record ID.
-        //int recordIDToDelete = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
-        
-        // Prepare the query.
-        //NSString *query = [NSString stringWithFormat:@"delete from cardInfo where cardInfoID=%d", recordIDToDelete];
-        
-        // Execute the query.
-        //[self.dbManager executeQuery:query];
-        
-        // Reload the table view.
-        //[self loadData];
-    }
-}*/
+ 
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the selected record.
+ // Find the record ID.
+ //int recordIDToDelete = [[[self.arrCardInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+ 
+ // Prepare the query.
+ //NSString *query = [NSString stringWithFormat:@"delete from cardInfo where cardInfoID=%d", recordIDToDelete];
+ 
+ // Execute the query.
+ //[self.dbManager executeQuery:query];
+ 
+ // Reload the table view.
+ //[self loadData];
+ }
+ }*/
 
 #pragma mark - EditInfoViewControllerDelegate method implementation
 
 /*
--(void)editingInfoWasFinished{
-    // Reload the data.
-    [self loadData];
-}
-*/
+ -(void)editingInfoWasFinished{
+ // Reload the data.
+ [self loadData];
+ }
+ */
+
 
 @end

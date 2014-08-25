@@ -46,6 +46,10 @@
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    self.tabBarController.tabBar.hidden = YES;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    [self setHidesBottomBarWhenPushed:YES];
+    
     _orLabel.hidden = NO;
     
     
@@ -92,6 +96,12 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    self.tabBarController.tabBar.hidden = YES;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    [self setHidesBottomBarWhenPushed:YES];
     /*PFUser *user = [PFUser currentUser];
     if (user.username != nil) {
         [self performSegueWithIdentifier:@"login" sender:self];

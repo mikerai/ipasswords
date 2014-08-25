@@ -12,7 +12,7 @@
 
 @interface DetailViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic) int recordIDToEdit;
+//@property (nonatomic) int recordIDToEdit;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *txtCardname;
