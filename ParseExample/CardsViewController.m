@@ -45,17 +45,22 @@
     
     self.tblCards.rowHeight = 71.0f;
     
-    // Initialize the dbManager property.
-    //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
-    
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Card"];
     self.cards = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [_tblCards reloadData];
     
-    // Load the data.
-    //[self loadData];
+   /* [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    // mostly redundant calls, because they're all default
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.extendedLayoutIncludesOpaqueBars = NO; */
+    
+    //self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
 }
 
@@ -65,7 +70,7 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.tblCards.delegate = self;
     self.tblCards.dataSource = self;

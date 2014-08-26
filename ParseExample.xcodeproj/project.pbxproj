@@ -24,6 +24,8 @@
 		8B0514CA19ABD6DE008B9519 /* WandEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0514C919ABD6DE008B9519 /* WandEDetailViewController.m */; };
 		8B0514CD19ABD6F0008B9519 /* EditWandEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0514CC19ABD6F0008B9519 /* EditWandEViewController.m */; };
 		8B1EC3D519A672A900C50213 /* CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EC3D419A672A900C50213 /* CustomSegue.m */; };
+		8B206AFB19ACE57C002D9636 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B206AFA19ACE57C002D9636 /* Default-568h@2x.png */; };
+		8B206AFE19AD40D8002D9636 /* UnderlayNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B206AFD19AD40D8002D9636 /* UnderlayNavigationBar.m */; };
 		8B21C02B19A65A1B00424BD6 /* Alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */; };
 		8B21C03419A65FFF00424BD6 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */; };
 		8B21C03519A65FFF00424BD6 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C03319A65FFF00424BD6 /* ToDoListViewController.m */; };
@@ -42,7 +44,6 @@
 		8B52588019A7F27B007EADF8 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B52587F19A7F27B007EADF8 /* calendar@2x.png */; };
 		8B785EF019A695C500DE57A1 /* apple_alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B785EEF19A695C500DE57A1 /* apple_alarm.mp3 */; };
 		8B785EF219A697D700DE57A1 /* pinkbg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B785EF119A697D700DE57A1 /* pinkbg@2x.jpg */; };
-		8B8DAC6B19ABE09B007B6824 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8DAC6A19ABE09B007B6824 /* Default-568h@2x.png */; };
 		8B8DAC6D19ABE4EB007B6824 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8DAC6C19ABE4EB007B6824 /* logo@2x.png */; };
 		8B8DAC7F19ABECAF007B6824 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8DAC6F19ABECAF007B6824 /* Icon-40.png */; };
 		8B8DAC8019ABECAF007B6824 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8DAC7019ABECAF007B6824 /* Icon-40@2x.png */; };
@@ -115,6 +116,9 @@
 		8B0514CC19ABD6F0008B9519 /* EditWandEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWandEViewController.m; sourceTree = "<group>"; };
 		8B1EC3D319A672A900C50213 /* CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegue.h; sourceTree = "<group>"; };
 		8B1EC3D419A672A900C50213 /* CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegue.m; sourceTree = "<group>"; };
+		8B206AFA19ACE57C002D9636 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8B206AFC19AD40D8002D9636 /* UnderlayNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderlayNavigationBar.h; sourceTree = "<group>"; };
+		8B206AFD19AD40D8002D9636 /* UnderlayNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderlayNavigationBar.m; sourceTree = "<group>"; };
 		8B21C02A19A65A1B00424BD6 /* Alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alarm@2x.png"; sourceTree = "<group>"; };
 		8B21C03019A65FFF00424BD6 /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
 		8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
@@ -139,7 +143,6 @@
 		8B52587F19A7F27B007EADF8 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		8B785EEF19A695C500DE57A1 /* apple_alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple_alarm.mp3; sourceTree = "<group>"; };
 		8B785EF119A697D700DE57A1 /* pinkbg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pinkbg@2x.jpg"; sourceTree = "<group>"; };
-		8B8DAC6A19ABE09B007B6824 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8B8DAC6C19ABE4EB007B6824 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		8B8DAC6F19ABECAF007B6824 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		8B8DAC7019ABECAF007B6824 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 			children = (
 				CEC5DD8E16E8CC6400F6F75F /* AppDelegate.h */,
 				CEC5DD8F16E8CC6400F6F75F /* AppDelegate.m */,
+				8B206AFC19AD40D8002D9636 /* UnderlayNavigationBar.h */,
+				8B206AFD19AD40D8002D9636 /* UnderlayNavigationBar.m */,
 			);
 			name = Delegate;
 			sourceTree = "<group>";
@@ -448,7 +453,7 @@
 		CEC5DD8616E8CC6400F6F75F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8B8DAC6A19ABE09B007B6824 /* Default-568h@2x.png */,
+				8B206AFA19ACE57C002D9636 /* Default-568h@2x.png */,
 				CEC5DD8716E8CC6400F6F75F /* ParseExample-Info.plist */,
 				CEC5DD8816E8CC6400F6F75F /* InfoPlist.strings */,
 				CEC5DD8B16E8CC6400F6F75F /* main.m */,
@@ -526,6 +531,7 @@
 				8B785EF219A697D700DE57A1 /* pinkbg@2x.jpg in Resources */,
 				CEC5DD8A16E8CC6400F6F75F /* InfoPlist.strings in Resources */,
 				8B52588019A7F27B007EADF8 /* calendar@2x.png in Resources */,
+				8B206AFB19ACE57C002D9636 /* Default-568h@2x.png in Resources */,
 				34A47E9219AABD2C0030720C /* Smartphone_Outgoing@2x.png in Resources */,
 				8B8DAC8619ABECAF007B6824 /* Icon-76@2x.png in Resources */,
 				CEC5DD9216E8CC6400F6F75F /* Default.png in Resources */,
@@ -547,7 +553,6 @@
 				8B8DAC8A19ABECAF007B6824 /* Icon-Small@2x.png in Resources */,
 				8B40A22019A2838500545A8A /* profile-bg.png in Resources */,
 				8B8DAC6D19ABE4EB007B6824 /* logo@2x.png in Resources */,
-				8B8DAC6B19ABE09B007B6824 /* Default-568h@2x.png in Resources */,
 				8B8DAC8719ABECAF007B6824 /* Icon-Small-50.png in Resources */,
 				8B8DAC8319ABECAF007B6824 /* Icon-72.png in Resources */,
 				CEC5DD9916E8CC6400F6F75F /* MainStoryboard.storyboard in Resources */,
@@ -576,6 +581,7 @@
 				8B0514CD19ABD6F0008B9519 /* EditWandEViewController.m in Sources */,
 				8B40A23319A2AC4800545A8A /* EditInfoViewController.m in Sources */,
 				CEC5DD8C16E8CC6400F6F75F /* main.m in Sources */,
+				8B206AFE19AD40D8002D9636 /* UnderlayNavigationBar.m in Sources */,
 				345DF00819A43B8500D3511A /* CoreData.xcdatamodeld in Sources */,
 				3436718119A2D83F0092F85A /* DetailViewController.m in Sources */,
 				8B0514C719ABD6C7008B9519 /* WandEViewController.m in Sources */,
