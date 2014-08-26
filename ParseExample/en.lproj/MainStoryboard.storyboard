@@ -561,7 +561,7 @@
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.38823529410000002" green="0.64705882349999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A5m-gI-Gy2">
                                 <rect key="frame" x="20" y="351" width="280" height="153"/>
@@ -617,10 +617,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="morebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="RPB-e6-UKq">
-                                <rect key="frame" x="9" y="84" width="302" height="230"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.66600000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios8-hero.png" translatesAutoresizingMaskIntoConstraints="NO" id="Md0-fS-hxb">
                                 <rect key="frame" x="103" y="142" width="114" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -644,7 +640,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.95686280729999995" green="0.9450981021" blue="0.89411771299999998" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="VAO-J6-5AR"/>
                 </viewController>
@@ -860,7 +856,7 @@
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.38823529410000002" green="0.64705882349999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCn-6n-Xef">
                                 <rect key="frame" x="20" y="266" width="280" height="50"/>
@@ -1500,11 +1496,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="139" y="181" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.38823529410000002" green="0.64705882349999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.93333333330000001" green="0.91372549020000005" blue="0.92941176469999998" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sLw-cF-OGS"/>
                     <connections>
@@ -1583,7 +1579,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="hair.jpg" width="100" height="109"/>
         <image name="ios8-hero.png" width="114" height="114"/>
         <image name="lightsbg.png" width="320" height="197"/>
-        <image name="morebg.png" width="320" height="230"/>
         <image name="profile-bg.png" width="640" height="434"/>
         <image name="touch-id-icon.png" width="50" height="50"/>
     </resources>
@@ -1593,10 +1588,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kPD-CS-zZF"/>
-        <segue reference="ZF8-iO-V22"/>
         <segue reference="sR6-HG-FF5"/>
+        <segue reference="4ta-av-3rq"/>
+        <segue reference="fWq-uf-Y8I"/>
         <segue reference="Vbx-gq-wi3"/>
-        <segue reference="MZ3-n7-L2K"/>
+        <segue reference="Z9p-kx-Jcz"/>
     </inferredMetricsTieBreakers>
 </document>
