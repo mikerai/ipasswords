@@ -97,7 +97,84 @@
         [self.dueDay setText:[self.card valueForKey:@"dueday"]];
         [self.txtAccount setText:[self.card valueForKey:@"account"]];
     }
+    
+    arrDays = [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", @"10",@"11", @"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19", @"20", @"21",@"22",@"23",@"24",@"25",@"26",@"27",@"28",@"29", @"30", @"31", nil];
+    
+    daysPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43, 100, 200)];
+    daysPicker.delegate = self;
+    daysPicker.dataSource = self;
+    [daysPicker  setShowsSelectionIndicator:YES];
+    _dueDay.inputView =  daysPicker  ;
+    
+    // Create done button in UIPickerView
+    
+    mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 100, 56)];
+    mypickerToolbar.barStyle = UIBarStyleDefault;
+    [mypickerToolbar sizeToFit];
+    
+    
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pickerDoneClicked)];
+    [barItems addObject:doneBtn];
+    
+    
+    [mypickerToolbar setItems:barItems animated:YES];
+    
+    _dueDay.inputAccessoryView = mypickerToolbar;
 }
+
+-(void)pickerDoneClicked
+
+{
+  	NSLog(@"Done Clicked");
+    
+    [_dueDay resignFirstResponder];
+    mypickerToolbar.hidden=YES;
+    daysPicker.hidden=YES;
+    
+}
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+
+{
+    
+    return 1;
+    
+}
+
+
+
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+
+{
+    
+    return [arrDays count];
+    
+}
+
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+
+{
+    
+    return [arrDays objectAtIndex:row];
+    
+}
+
+
+- (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+
+{
+    
+    _dueDay.text = [arrDays objectAtIndex:row];
+    
+}
+
 
 -(void)viewDidAppear:(BOOL)animated {
     

@@ -129,7 +129,7 @@
     
     //[localNotification setTimeZone: [NSTimeZone defaultTimeZone]];
     [localNotification setRepeatInterval: NSMonthCalendarUnit];
-    NSLog(@"Repeat would be %u", localNotification.repeatInterval);
+    NSLog(@"Repeat would be %lu", localNotification.repeatInterval);
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     

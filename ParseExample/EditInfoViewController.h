@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface EditInfoViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
+@interface EditInfoViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+    
+    NSArray *arrDays;
+    UIPickerView *daysPicker ;
+    UIToolbar *mypickerToolbar;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *txtCardname;
 @property (weak, nonatomic) IBOutlet UITextField *txtCardtype;

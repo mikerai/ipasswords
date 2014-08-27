@@ -51,6 +51,8 @@
     
     [_tblCards reloadData];
     
+    //self.navigationController.navigationBar.alpha = 0.5f;
+    
    /* [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
@@ -82,6 +84,35 @@
     self.cards = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [_tblCards reloadData];
+    
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    if (self.cards.count != 0) {
+        
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        
+        messageLabel.text = @"No data is currently available. Add your first card by clicking on the + sign.";
+        messageLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:21.0f];
+        [messageLabel sizeToFit];
+        
+        self.tblCards.backgroundView = messageLabel;
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:YES];
+    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -168,13 +199,42 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     return 1;
+    
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //return self.arrCardInfo.count;
-    return self.cards.count;
+    //return self.cards.count;
+    
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    if (self.cards.count != 0) {
+        
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
+        return self.cards.count;
+
+        
+    } else {
+        
+        // Display a message when the table is empty
+        
+        messageLabel.text = @"No data is currently available. Add your first card by clicking on the + sign.";
+        messageLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:21.0f];
+        [messageLabel sizeToFit];
+        
+        self.tblCards.backgroundView = messageLabel;
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
+    return 0;
 }
 
 
