@@ -265,10 +265,10 @@
 				3436718019A2D83F0092F85A /* DetailViewController.m */,
 				8B40A23119A2AC4800545A8A /* EditInfoViewController.h */,
 				8B40A23219A2AC4800545A8A /* EditInfoViewController.m */,
-				8B21C03019A65FFF00424BD6 /* AddToDoViewController.h */,
-				8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */,
 				8B21C03219A65FFF00424BD6 /* ToDoListViewController.h */,
 				8B21C03319A65FFF00424BD6 /* ToDoListViewController.m */,
+				8B21C03019A65FFF00424BD6 /* AddToDoViewController.h */,
+				8B21C03119A65FFF00424BD6 /* AddToDoViewController.m */,
 			);
 			name = Cards;
 			sourceTree = "<group>";

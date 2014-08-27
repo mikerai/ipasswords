@@ -41,6 +41,8 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
+     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+    
     self.tblAccessPoints.delegate = self;
     self.tblAccessPoints.dataSource = self;
     
@@ -64,7 +66,7 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
     
     self.tblAccessPoints.delegate = self;
     self.tblAccessPoints.dataSource = self;

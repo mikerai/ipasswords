@@ -52,6 +52,7 @@
     
     _orLabel.hidden = NO;
     
+    [self preferredStatusBarStyle];
     
     [PFUser logOut];
     NSLog(@"User has been logged out");

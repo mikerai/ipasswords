@@ -40,6 +40,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+    
     self.itemText.delegate = self;
     
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
@@ -127,7 +129,7 @@
     
     //[localNotification setTimeZone: [NSTimeZone defaultTimeZone]];
     [localNotification setRepeatInterval: NSMonthCalendarUnit];
-    NSLog(@"Repeat would be %lu", localNotification.repeatInterval);
+    NSLog(@"Repeat would be %u", localNotification.repeatInterval);
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     

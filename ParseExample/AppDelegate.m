@@ -37,25 +37,25 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:1 alpha:0.01]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:1 alpha:1]];
     
     //[[UINavigationBar appearance] setTranslucent:YES];
     
     //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.949 green:0.6 blue:0.827 alpha:0.5]]; /*#f299d3 Pink*/
     //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.286 green:0.573 blue:0.749 alpha:1]]; /*#4992bf blue*/
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:0.1]]; /*#63a599 green*/
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:0.1]]; /*#63a599 green*/
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor whiteColor]}
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f]/*,NSForegroundColorAttributeName :   [UIColor whiteColor]*/}
                                forState:UIControlStateNormal];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor whiteColor]}
-                                             forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f],NSForegroundColorAttributeName :   [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]}
+                                            forState:UIControlStateSelected];
     
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:
-     @{NSFontAttributeName:[UIFont fontWithName:@"HiraKakuProN-W3" size:16.0f]
+     @{NSFontAttributeName:[UIFont fontWithName:@"HiraKakuProN-W3" size:16.0f], NSForegroundColorAttributeName :   [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1]
        }
      forState:UIControlStateNormal];
     

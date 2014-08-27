@@ -60,6 +60,8 @@
     
     [self setPlaceholder];
     
+     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+    
     /*_txtNotes.delegate = self;
     _txtNotes.text = @"placeholder text here...";
     _txtNotes.textColor = [UIColor lightGrayColor]; //optional*/
@@ -103,7 +105,7 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
     
     if (self.card) {
         [self.txtCardname setText:[self.card valueForKey:@"name"]];

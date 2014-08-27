@@ -54,7 +54,19 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+    
+    UIBarButtonItem *editItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editDetails)];
+    UIBarButtonItem *agendaItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"calendar.png"] style:UIBarButtonItemStylePlain target:self action:@selector(setReminder)];
+    //UIBarButtonItem *agendaItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
+    
+    NSArray *actionButtonItems = @[editItem, agendaItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    
+    if (self.dueDay.text == NULL) {
+        agendaItem.width = 0.01;
+        agendaItem.enabled = NO;
+    }
     
     // Make self the delegate of the textfields.
     /*self.txtCardname.delegate = self;
@@ -93,6 +105,8 @@
     
     [super viewDidAppear:animated];
     
+     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+    
     [self setNeedsStatusBarAppearanceUpdate];
     
     if (self.card) {
@@ -120,7 +134,8 @@
     
     // Set the navigation bar tint color.
     //self.navigationController.navigationBar.tintColor = self.navigationItem.rightBarButtonItem.tintColor;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+
     
     // Initialize the dbManager object.
     //self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"password.sql"];
@@ -145,16 +160,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+-(void)editDetails {
+    
+    [self performSegueWithIdentifier: @"editDetails" sender: self];
+}
+
+-(void)setReminder {
+    //[self performSegueWithIdentifier: @"setReminderFromDetails" sender: self];
+    NSManagedObject *selectedCard = [self card];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
+                                @"MainStoryboard" bundle:[NSBundle mainBundle]];
+    ToDoListViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"addToDo"];
+    myController.card = selectedCard;
+    //[self presentViewController:myController animated:YES completion:nil];
+    [self.navigationController pushViewController:myController animated:YES];
+    
+}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
