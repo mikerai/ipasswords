@@ -126,7 +126,7 @@
     return 71.0;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -149,7 +149,7 @@
     
     [tableView reloadData];
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

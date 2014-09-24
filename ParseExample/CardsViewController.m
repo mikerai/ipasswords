@@ -51,6 +51,31 @@
     
     [_tblCards reloadData];
     
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    if (self.cards.count != 0) {
+        
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
+        messageLabel.text = @"";
+        self.tblCards.backgroundView = messageLabel;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        
+        messageLabel.text = @"No data is currently available. Add your first card by clicking on the + sign.";
+        messageLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:21.0f];
+        [messageLabel sizeToFit];
+        
+        self.tblCards.backgroundView = messageLabel;
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
     //self.navigationController.navigationBar.alpha = 0.5f;
     
    /* [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -91,6 +116,9 @@
         
         self.tblCards.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
+        messageLabel.text = @"";
+        self.tblCards.backgroundView = messageLabel;
+        
     } else {
         
         // Display a message when the table is empty
@@ -112,6 +140,33 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:YES];
+    
+    [_tblCards reloadData];
+    
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    if (self.cards.count != 0) {
+        
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
+        messageLabel.text = @"";
+        self.tblCards.backgroundView = messageLabel;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        
+        messageLabel.text = @"No data is currently available. Add your first card by clicking on the + sign.";
+        messageLabel.textColor = [UIColor colorWithRed:0.388 green:0.647 blue:0.6 alpha:1];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:21.0f];
+        [messageLabel sizeToFit];
+        
+        self.tblCards.backgroundView = messageLabel;
+        self.tblCards.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
     
 }
 
@@ -216,6 +271,9 @@
         self.tblCards.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
         return self.cards.count;
+        
+        messageLabel.text = @"";
+        self.tblCards.backgroundView = messageLabel;
 
         
     } else {
